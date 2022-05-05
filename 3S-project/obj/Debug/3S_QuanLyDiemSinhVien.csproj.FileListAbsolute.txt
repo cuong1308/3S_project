@@ -1,0 +1,11 @@
+C:\Users\kietv\source\repos\3S_project\3S-project\bin\Debug\3S-project.exe.config
+C:\Users\kietv\source\repos\3S_project\3S-project\bin\Debug\3S-project.exe
+C:\Users\kietv\source\repos\3S_project\3S-project\bin\Debug\3S-project.pdb
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\3S_QuanLyDiemSinhVien.csproj.AssemblyReference.cache
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\3S_QuanLyDiemSinhVien.csproj.SuggestedBindingRedirects.cache
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.Form1.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.Properties.Resources.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\3S_QuanLyDiemSinhVien.csproj.GenerateResource.cache
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\3S_QuanLyDiemSinhVien.csproj.CoreCompileInputs.cache
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\3S-project.exe
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\3S-project.pdb
