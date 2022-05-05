@@ -58,6 +58,12 @@
     <Compile Include="GUI\Form2222.Designer.cs">
       <DependentUpon>Form2222.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Form33333.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form33333.Designer.cs">
+      <DependentUpon>Form33333.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Diem.cs" />
     <Compile Include="Model\GiangVien.cs" />
     <Compile Include="Model\Khoa.cs" />
