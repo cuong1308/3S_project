@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
+<<<<<<< HEAD
     "",
     "\\3S-project",
     "\\3S-project\\Model"
+=======
+    ""
+>>>>>>> ef9e23efd111667713c08d77a14ba9df9c638095
   ],
   "SelectedNode": "\\3S_project.sln",
   "PreviewInSolutionExplorer": false
