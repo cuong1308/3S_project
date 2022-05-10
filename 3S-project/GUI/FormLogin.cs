@@ -15,6 +15,14 @@ namespace _3S_project.GUI
         public FormLogin()
         {
             InitializeComponent();
+            txtMatKhau.PasswordChar = '*';
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var tenDangNhap = txtTenDangNhap.Text;
+            var matKhau = txtMatKhau.Text;
+
         }
     }
 }
