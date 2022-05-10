@@ -172,7 +172,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 38);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(868, 467);
+            this.tabControl1.Size = new System.Drawing.Size(861, 467);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -573,7 +573,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(860, 438);
+            this.tabPage8.Size = new System.Drawing.Size(853, 438);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Thống kê";
             this.tabPage8.UseVisualStyleBackColor = true;
