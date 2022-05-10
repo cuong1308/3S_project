@@ -8,7 +8,7 @@ namespace _3S_project.Model
 {
     public class Khoa
     {
-        public string MaKhoa { get; set; }
+        public int MaKhoa { get; set; }
         public string TenKhoa { get; set; }
     }
 }

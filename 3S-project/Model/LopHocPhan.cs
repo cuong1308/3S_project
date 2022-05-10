@@ -8,7 +8,7 @@ namespace _3S_project.Model
 {
     public class LopHocPhan
     {
-        public string MaLopHocPhan { get; set; }
+        public int MaLopHocPhan { get; set; }
         public string TenLopHocPhan { get; set; }
         public int HocKi { get; set; }
         public string NamHoc { get; set; }

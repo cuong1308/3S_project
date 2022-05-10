@@ -8,7 +8,7 @@ namespace _3S_project.Model
 {
     public class SinhVien
     {
-        public string MaSinhVien { get; set; }
+        public int MaSinhVien { get; set; }
         public string TenSinhVen { get; set; }
         public bool GioiTinh { get; set; }
         public DateTime DateTime { get; set; }

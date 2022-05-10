@@ -10,3 +10,5 @@ C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\3S_QuanLyDiemSinhVie
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\3S-project.exe
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\3S-project.pdb
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormLogin.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormMainGiangVien.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormMainQuanLy.resources

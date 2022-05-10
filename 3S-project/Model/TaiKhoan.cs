@@ -11,5 +11,8 @@ namespace _3S_project.Model
         public string TenUser { get; set; }
         public string MatKhau { get; set;}
         public GiangVien GiangVien { get; set;}
+        public int Quyen { get; set; }
+
+        public string Email { get; set; }  
     }
 }

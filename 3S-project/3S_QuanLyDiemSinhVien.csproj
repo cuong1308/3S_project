@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\dataGiangVien.cs" />
+    <Compile Include="Data\DbUtils.cs" />
+    <Compile Include="Data\TaiKhoan.cs" />
     <Compile Include="GUI\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +60,18 @@
     </Compile>
     <Compile Include="GUI\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormMainGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormMainGiangVien.Designer.cs">
+      <DependentUpon>FormMainGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormMainQuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormMainQuanLy.Designer.cs">
+      <DependentUpon>FormMainQuanLy.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Diem.cs" />
     <Compile Include="Model\GiangVien.cs" />
@@ -73,6 +88,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormMainGiangVien.resx">
+      <DependentUpon>FormMainGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormMainQuanLy.resx">
+      <DependentUpon>FormMainQuanLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -96,8 +117,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

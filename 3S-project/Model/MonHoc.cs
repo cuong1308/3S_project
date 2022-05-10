@@ -8,7 +8,7 @@ namespace _3S_project.Model
 {
     public class MonHoc
     {
-        public string MaMonHoc { get; set; }
+        public int MaMonHoc { get; set; }
         public string TenMonHoc { get; set; }
         public string DonViPhuTrach { get; set; }
     }
