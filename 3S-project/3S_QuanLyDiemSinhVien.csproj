@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\dataGiangVien.cs" />
+    <Compile Include="Data\dataLopHocPhan.cs" />
+    <Compile Include="Data\dataMonHoc.cs" />
     <Compile Include="Data\DbUtils.cs" />
     <Compile Include="Data\TaiKhoan.cs" />
     <Compile Include="GUI\FormLogin.cs">
@@ -73,6 +75,24 @@
     <Compile Include="GUI\FormMainQuanLy.Designer.cs">
       <DependentUpon>FormMainQuanLy.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormMain\FormMainAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormMain\FormMainAdmin.Designer.cs">
+      <DependentUpon>FormMainAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormMain\FormMainGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormMain\FormMainGiangVien.Designer.cs">
+      <DependentUpon>FormMainGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormMain\FormMainQuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormMain\FormMainQuanLy.Designer.cs">
+      <DependentUpon>FormMainQuanLy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Diem.cs" />
     <Compile Include="Model\GiangVien.cs" />
     <Compile Include="Model\Khoa.cs" />
@@ -93,6 +113,15 @@
       <DependentUpon>FormMainGiangVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormMainQuanLy.resx">
+      <DependentUpon>FormMainQuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormMain\FormMainAdmin.resx">
+      <DependentUpon>FormMainAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormMain\FormMainGiangVien.resx">
+      <DependentUpon>FormMainGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormMain\FormMainQuanLy.resx">
       <DependentUpon>FormMainQuanLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

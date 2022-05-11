@@ -13,6 +13,7 @@ namespace _3S_project.Model
         public GiangVien GiangVien { get; set;}
         public int Quyen { get; set; }
 
-        public string Email { get; set; }  
+        public string Email { get; set; } 
+        public bool TrangThai { get; set; }
     }
 }

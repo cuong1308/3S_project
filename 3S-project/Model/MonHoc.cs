@@ -11,5 +11,7 @@ namespace _3S_project.Model
         public int MaMonHoc { get; set; }
         public string TenMonHoc { get; set; }
         public string DonViPhuTrach { get; set; }
+
+        public int TinChi { get; set; }
     }
 }
