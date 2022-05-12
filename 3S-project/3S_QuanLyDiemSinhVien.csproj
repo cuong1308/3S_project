@@ -60,6 +60,12 @@
     <Compile Include="GUI\FormAdmin\FormQuanLyLop.Designer.cs">
       <DependentUpon>FormQuanLyLop.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormAdmin\FormSinhVien\QuanLySinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormSinhVien\QuanLySinhVien.Designer.cs">
+      <DependentUpon>QuanLySinhVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,14 +108,14 @@
     <Compile Include="GUI\FormMain\FormMainQuanLy.Designer.cs">
       <DependentUpon>FormMainQuanLy.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Diem.cs" />
-    <Compile Include="Model\GiangVien.cs" />
-    <Compile Include="Model\Khoa.cs" />
-    <Compile Include="Model\Lop.cs" />
-    <Compile Include="Model\LopHocPhan.cs" />
-    <Compile Include="Model\MonHoc.cs" />
-    <Compile Include="Model\SinhVien.cs" />
-    <Compile Include="Model\TaiKhoan.cs" />
+    <Compile Include="GUI\Model\Diem.cs" />
+    <Compile Include="GUI\Model\GiangVien.cs" />
+    <Compile Include="GUI\Model\Khoa.cs" />
+    <Compile Include="GUI\Model\Lop.cs" />
+    <Compile Include="GUI\Model\LopHocPhan.cs" />
+    <Compile Include="GUI\Model\MonHoc.cs" />
+    <Compile Include="GUI\Model\SinhVien.cs" />
+    <Compile Include="GUI\Model\TaiKhoan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\FormLogin.resx">
