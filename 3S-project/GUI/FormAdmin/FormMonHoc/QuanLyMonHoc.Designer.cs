@@ -40,7 +40,7 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
             this.tenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DVPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tinChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn5 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingQuanLyMonHoc)).BeginInit();
@@ -61,7 +61,7 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
             this.tenMonHoc,
             this.DVPT,
             this.tinChi,
-            this.dataGridViewButtonColumn5,
+            this.Sua,
             this.Xoa});
             this.dataGridView6.Location = new System.Drawing.Point(67, 157);
             this.dataGridView6.Name = "dataGridView6";
@@ -123,12 +123,12 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
             this.tinChi.HeaderText = "Tín chỉ";
             this.tinChi.Name = "tinChi";
             // 
-            // dataGridViewButtonColumn5
+            // Sua
             // 
-            this.dataGridViewButtonColumn5.HeaderText = "Sửa";
-            this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
-            this.dataGridViewButtonColumn5.Text = "Sửa";
-            this.dataGridViewButtonColumn5.UseColumnTextForButtonValue = true;
+            this.Sua.HeaderText = "Sửa";
+            this.Sua.Name = "Sua";
+            this.Sua.Text = "Sửa";
+            this.Sua.UseColumnTextForButtonValue = true;
             // 
             // Xoa
             // 
@@ -169,7 +169,7 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
         private System.Windows.Forms.DataGridViewTextBoxColumn tenMonHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn DVPT;
         private System.Windows.Forms.DataGridViewTextBoxColumn tinChi;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn5;
+        private System.Windows.Forms.DataGridViewButtonColumn Sua;
         private System.Windows.Forms.DataGridViewButtonColumn Xoa;
     }
 }

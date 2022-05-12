@@ -34,9 +34,10 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataMonHoc dataMonHoc = new dataMonHoc();
-            dataMonHoc.Xoa(monHoc.MaMonHoc);
+            dataMonHoc dtMH = new dataMonHoc();
+            dtMH.Xoa(monHoc.MaMonHoc);
             this.Close();
+
         }
     }
 }

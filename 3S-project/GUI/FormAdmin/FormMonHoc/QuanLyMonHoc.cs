@@ -90,6 +90,30 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
                 dataGridView6.AutoGenerateColumns = false;
                 dataGridView6.DataSource = bindingQuanLyMonHoc;
             }
+
+            if (dataGridView6.Columns[e.ColumnIndex].Name == "Sua")
+            {
+                DataGridViewRow selectedRow = dataGridView6.Rows[e.RowIndex];
+                MonHoc monHoc = (MonHoc)selectedRow.DataBoundItem;
+
+                frmSuaMonHoc frmSMH = new frmSuaMonHoc(monHoc);
+                frmSMH.ShowDialog();
+
+                dataMonHoc dtMH = new dataMonHoc();
+
+                List<MonHoc> lst = dtMH.getlstMonHoc();
+                bindingQuanLyMonHoc.DataSource = lst;
+
+
+                // Hiển thị lên GUI / grid
+                maMonHoc.DataPropertyName = "MaMonHoc";
+                tenMonHoc.DataPropertyName = "TenMonHoc";
+                DVPT.DataPropertyName = "DonViPhuTrach";
+                tinChi.DataPropertyName = "TinChi";
+
+                dataGridView6.AutoGenerateColumns = false;
+                dataGridView6.DataSource = bindingQuanLyMonHoc;
+            }
         }
     }
 }

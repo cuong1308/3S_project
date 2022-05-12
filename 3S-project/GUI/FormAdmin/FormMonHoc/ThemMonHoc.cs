@@ -54,5 +54,10 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
         {
 
         }
+
+        private void frmThemMonHoc_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

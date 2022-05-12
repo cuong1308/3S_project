@@ -1,6 +1,8 @@
 ﻿using _3S_project.GUI.FormAdmin.FormMonHoc;
 using _3S_project.GUI.FormAdmin.FormQuanLyKhoa;
 using _3S_project.GUI.FormAdmin.FormSinhVien;
+using _3S_project.GUI.FormQuanLyLop;
+using _3S_project.GUI.FormQuanLyLopHP;
 using _3S_project.Model;
 using System;
 using System.Collections.Generic;
@@ -38,11 +40,14 @@ namespace _3S_project.GUI.FormMain
 
         private void quảnLýLớpToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            Quanlylop quanlylop = new Quanlylop();
+            quanlylop.ShowDialog();
         }
 
         private void quảnLýLớpHọcPhầnToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            QuanLyLopHocPhan quanLyLopHocPhan = new QuanLyLopHocPhan();
+            quanLyLopHocPhan.ShowDialog();
 
         }
 

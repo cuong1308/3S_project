@@ -122,6 +122,7 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
             this.Controls.Add(this.label1);
             this.Name = "frmThemMonHoc";
             this.Text = "ThemMonHoc";
+            this.Load += new System.EventHandler(this.frmThemMonHoc_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
