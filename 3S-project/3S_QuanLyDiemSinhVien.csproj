@@ -51,6 +51,7 @@
     <Compile Include="Data\dataLop.cs" />
     <Compile Include="Data\dataLopHocPhan.cs" />
     <Compile Include="Data\dataMonHoc.cs" />
+    <Compile Include="Data\dataSinhVien.cs" />
     <Compile Include="Data\DbUtils.cs" />
     <Compile Include="Data\TaiKhoan.cs" />
     <Compile Include="GUI\FormAdmin\FormQuanLyLop.cs">
