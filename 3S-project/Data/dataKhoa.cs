@@ -61,15 +61,14 @@ namespace _3S_project.Data
             }
         }
 
-        public int Them(int maKhoa, string tenKhoa)
+        public int Them(string tenKhoa)
         {
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
                 command.Connection = cnn;
-                string sql = "Insert into Khoa(MaKhoa, TenKhoa,TrangThai) Values (@MaKhoa,@TenKhoa,1)";
+                string sql = "Insert into Khoa(TenKhoa,TrangThai) Values (@TenKhoa,1)";
                 command.CommandText = sql;
-                command.Parameters.AddWithValue("@MaKhoa", maKhoa);
                 command.Parameters.AddWithValue("@TenKhoa", tenKhoa);
                 var reader = command.ExecuteScalar();
 

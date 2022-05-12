@@ -73,15 +73,14 @@ namespace _3S_project.Data
             }
         }
 
-        public int Them(int maLopHocPhan, string tenLopHocPhan, int hocKi, string namHoc, int maMonHoc, int maGiangVien)
+        public int Them( string tenLopHocPhan, int hocKi, string namHoc, int maMonHoc, int maGiangVien)
         {
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
                 command.Connection = cnn;
-                string sql = "Insert into LopHocPhan(MaLopHocPhan, TenLopHocPhan, HocKi, NamHoc, TrangThai, MaMonHoc, MaGiangVien) Values (@MaLopHocPhan,@TenLopHocPhan,@HocKi,@NamHoc,1,@MaMonHoc, @MaGiangVien)";
+                string sql = "Insert into LopHocPhan( TenLopHocPhan, HocKi, NamHoc, TrangThai, MaMonHoc, MaGiangVien) Values (@TenLopHocPhan,@HocKi,@NamHoc,1,@MaMonHoc, @MaGiangVien)";
                 command.CommandText = sql;
-                command.Parameters.AddWithValue("@MaLopHocPhan", maLopHocPhan);
                 command.Parameters.AddWithValue("@TenLopHocPhan", tenLopHocPhan);
                 command.Parameters.AddWithValue("@HocKi", hocKi);
                 command.Parameters.AddWithValue("@NamHoc", namHoc);
