@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\dataDiem.cs" />
     <Compile Include="Data\dataGiangVien.cs" />
     <Compile Include="Data\dataKhoa.cs" />
     <Compile Include="Data\dataLop.cs" />

@@ -13,5 +13,7 @@ namespace _3S_project.Model
         public float DiemChuyenCan { get; set; }
         public float DiemKiemTra1 { get; set; }
         public float DiemKiemTra2 { get; set; }
+        public float DiemKiemTra3 { get; set; }
+        public float DiemThi { get; set; }
     }
 }
