@@ -51,6 +51,13 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.gridQLHP = new System.Windows.Forms.DataGridView();
+            this.maMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soDKHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DVPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tinChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn5 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -111,13 +118,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.bsQuanLyGiangVien = new System.Windows.Forms.BindingSource(this.components);
             this.bsQuanLyHocPhan = new System.Windows.Forms.BindingSource(this.components);
-            this.maMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soDKHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DVPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tinChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn5 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -345,6 +345,49 @@
             this.gridQLHP.Name = "gridQLHP";
             this.gridQLHP.Size = new System.Drawing.Size(745, 228);
             this.gridQLHP.TabIndex = 27;
+            // 
+            // maMonHoc
+            // 
+            this.maMonHoc.DataPropertyName = "MaMonHoc";
+            this.maMonHoc.HeaderText = "Mã môn học";
+            this.maMonHoc.Name = "maMonHoc";
+            // 
+            // tenMonHoc
+            // 
+            this.tenMonHoc.DataPropertyName = "TenMonHoc";
+            this.tenMonHoc.HeaderText = "Tên môn học";
+            this.tenMonHoc.Name = "tenMonHoc";
+            // 
+            // soDKHT
+            // 
+            this.soDKHT.HeaderText = "Số ĐKHT";
+            this.soDKHT.Name = "soDKHT";
+            // 
+            // DVPT
+            // 
+            this.DVPT.DataPropertyName = "DonViPhuTrach";
+            this.DVPT.HeaderText = "ĐVPT";
+            this.DVPT.Name = "DVPT";
+            // 
+            // tinChi
+            // 
+            this.tinChi.DataPropertyName = "TinChi";
+            this.tinChi.HeaderText = "Tín chỉ";
+            this.tinChi.Name = "tinChi";
+            // 
+            // dataGridViewButtonColumn5
+            // 
+            this.dataGridViewButtonColumn5.HeaderText = "Sửa";
+            this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
+            this.dataGridViewButtonColumn5.Text = "Sửa";
+            this.dataGridViewButtonColumn5.UseColumnTextForButtonValue = true;
+            // 
+            // dataGridViewButtonColumn6
+            // 
+            this.dataGridViewButtonColumn6.HeaderText = "Xoá";
+            this.dataGridViewButtonColumn6.Name = "dataGridViewButtonColumn6";
+            this.dataGridViewButtonColumn6.Text = "Xoá";
+            this.dataGridViewButtonColumn6.UseColumnTextForButtonValue = true;
             // 
             // button17
             // 
@@ -656,6 +699,7 @@
             this.gridGV.Name = "gridGV";
             this.gridGV.Size = new System.Drawing.Size(643, 228);
             this.gridGV.TabIndex = 14;
+            this.gridGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridGV_CellContentClick);
             // 
             // maGiangVien
             // 
@@ -851,49 +895,6 @@
             // bsQuanLyGiangVien
             // 
             this.bsQuanLyGiangVien.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
-            // 
-            // maMonHoc
-            // 
-            this.maMonHoc.DataPropertyName = "MaMonHoc";
-            this.maMonHoc.HeaderText = "Mã môn học";
-            this.maMonHoc.Name = "maMonHoc";
-            // 
-            // tenMonHoc
-            // 
-            this.tenMonHoc.DataPropertyName = "TenMonHoc";
-            this.tenMonHoc.HeaderText = "Tên môn học";
-            this.tenMonHoc.Name = "tenMonHoc";
-            // 
-            // soDKHT
-            // 
-            this.soDKHT.HeaderText = "Số ĐKHT";
-            this.soDKHT.Name = "soDKHT";
-            // 
-            // DVPT
-            // 
-            this.DVPT.DataPropertyName = "DonViPhuTrach";
-            this.DVPT.HeaderText = "ĐVPT";
-            this.DVPT.Name = "DVPT";
-            // 
-            // tinChi
-            // 
-            this.tinChi.DataPropertyName = "TinChi";
-            this.tinChi.HeaderText = "Tín chỉ";
-            this.tinChi.Name = "tinChi";
-            // 
-            // dataGridViewButtonColumn5
-            // 
-            this.dataGridViewButtonColumn5.HeaderText = "Sửa";
-            this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
-            this.dataGridViewButtonColumn5.Text = "Sửa";
-            this.dataGridViewButtonColumn5.UseColumnTextForButtonValue = true;
-            // 
-            // dataGridViewButtonColumn6
-            // 
-            this.dataGridViewButtonColumn6.HeaderText = "Xoá";
-            this.dataGridViewButtonColumn6.Name = "dataGridViewButtonColumn6";
-            this.dataGridViewButtonColumn6.Text = "Xoá";
-            this.dataGridViewButtonColumn6.UseColumnTextForButtonValue = true;
             // 
             // FormMainQuanLy
             // 

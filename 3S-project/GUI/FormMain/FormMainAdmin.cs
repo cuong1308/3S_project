@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _3S_project.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace _3S_project.GUI.FormMain
 {
     public partial class FormMainAdmin : Form
     {
-        public FormMainAdmin()
+        public FormMainAdmin(TaiKhoan tk)
         {
             InitializeComponent();
         }

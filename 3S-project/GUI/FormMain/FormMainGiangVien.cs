@@ -12,7 +12,7 @@ namespace _3S_project.GUI.FormMain
 {
     public partial class FormMainGiangVien : Form
     {
-        public FormMainGiangVien()
+        public FormMainGiangVien(Model.TaiKhoan tk)
         {
             InitializeComponent();
         }

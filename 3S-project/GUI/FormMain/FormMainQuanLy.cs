@@ -12,7 +12,7 @@ namespace _3S_project.GUI.FormMain
 {
     public partial class FormMainQuanLy : Form
     {
-        public FormMainQuanLy()
+        public FormMainQuanLy(Model.TaiKhoan tk)
         {
             InitializeComponent();
         }

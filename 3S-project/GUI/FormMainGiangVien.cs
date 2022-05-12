@@ -27,5 +27,10 @@ namespace _3S_project.GUI
         {
             this.Close();
         }
+
+        private void dataGridView7_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

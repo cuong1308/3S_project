@@ -1,4 +1,5 @@
 ﻿using _3S_project.Data;
+using _3S_project.GUI.FormMain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,17 +30,17 @@ namespace _3S_project.GUI
                 MessageBox.Show("Nhập sai vui lòng thử lại");
             else if (tk.Quyen==1)
             {
-                Form1 form1 = new Form1(tk);
+                FormMainAdmin form1 = new FormMainAdmin(tk);
                 form1.ShowDialog();
             }
             else if (tk.Quyen == 2)
             {
-                FormMainQuanLy form2 = new FormMainQuanLy(tk);
+                FormMain.FormMainQuanLy form2 = new FormMain.FormMainQuanLy(tk);
                 form2.ShowDialog();
             }
             else if (tk.Quyen == 3)
             {
-                FormMainGiangVien form3 = new FormMainGiangVien(tk);
+                FormMain.FormMainGiangVien form3 = new FormMain.FormMainGiangVien(tk);
                 form3.ShowDialog();
             }
             else

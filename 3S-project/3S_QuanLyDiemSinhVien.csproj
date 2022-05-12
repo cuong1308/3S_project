@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\dataGiangVien.cs" />
+    <Compile Include="Data\dataKhoa.cs" />
+    <Compile Include="Data\dataLop.cs" />
     <Compile Include="Data\dataLopHocPhan.cs" />
     <Compile Include="Data\dataMonHoc.cs" />
     <Compile Include="Data\DbUtils.cs" />
@@ -114,12 +116,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormMainGiangVien.resx">
       <DependentUpon>FormMainGiangVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormMainQuanLy.resx">
       <DependentUpon>FormMainQuanLy.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormMain\FormMainAdmin.resx">
       <DependentUpon>FormMainAdmin.cs</DependentUpon>

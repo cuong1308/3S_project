@@ -55,5 +55,10 @@ namespace _3S_project.GUI
             bsQuanLyHocPhan.DataSource = lstMonHoc;
             gridQLHP.DataSource = bsQuanLyHocPhan;
         }
+
+        private void gridGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
