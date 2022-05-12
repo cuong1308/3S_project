@@ -50,14 +50,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            this.maMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soDKHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DVPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tinChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn5 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn6 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.gridQLHP = new System.Windows.Forms.DataGridView();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -93,6 +86,10 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
             this.gridGV = new System.Windows.Forms.DataGridView();
+            this.maGiangVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenGiangVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn9 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn10 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAddQLGV = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -113,15 +110,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.bsQuanLyGiangVien = new System.Windows.Forms.BindingSource(this.components);
-            this.maGiangVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenGiangVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn9 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn10 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.bsQuanLyHocPhan = new System.Windows.Forms.BindingSource(this.components);
+            this.maMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soDKHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DVPT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tinChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn5 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewButtonColumn6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridQLHP)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.tabPage4.SuspendLayout();
@@ -131,6 +132,7 @@
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsQuanLyGiangVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsQuanLyHocPhan)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -307,7 +309,7 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.textBox6);
-            this.tabPage2.Controls.Add(this.dataGridView6);
+            this.tabPage2.Controls.Add(this.gridQLHP);
             this.tabPage2.Controls.Add(this.button17);
             this.tabPage2.Controls.Add(this.button18);
             this.tabPage2.Controls.Add(this.label12);
@@ -326,11 +328,12 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(276, 23);
             this.textBox6.TabIndex = 28;
+            this.textBox6.Enter += new System.EventHandler(this.txtcnQLHP);
             // 
-            // dataGridView6
+            // gridQLHP
             // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridQLHP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridQLHP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maMonHoc,
             this.tenMonHoc,
             this.soDKHT,
@@ -338,49 +341,10 @@
             this.tinChi,
             this.dataGridViewButtonColumn5,
             this.dataGridViewButtonColumn6});
-            this.dataGridView6.Location = new System.Drawing.Point(51, 170);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.Size = new System.Drawing.Size(745, 228);
-            this.dataGridView6.TabIndex = 27;
-            // 
-            // maMonHoc
-            // 
-            this.maMonHoc.HeaderText = "Mã môn học";
-            this.maMonHoc.Name = "maMonHoc";
-            // 
-            // tenMonHoc
-            // 
-            this.tenMonHoc.HeaderText = "Tên môn học";
-            this.tenMonHoc.Name = "tenMonHoc";
-            // 
-            // soDKHT
-            // 
-            this.soDKHT.HeaderText = "Số ĐKHT";
-            this.soDKHT.Name = "soDKHT";
-            // 
-            // DVPT
-            // 
-            this.DVPT.HeaderText = "ĐVPT";
-            this.DVPT.Name = "DVPT";
-            // 
-            // tinChi
-            // 
-            this.tinChi.HeaderText = "Tín chỉ";
-            this.tinChi.Name = "tinChi";
-            // 
-            // dataGridViewButtonColumn5
-            // 
-            this.dataGridViewButtonColumn5.HeaderText = "Sửa";
-            this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
-            this.dataGridViewButtonColumn5.Text = "Sửa";
-            this.dataGridViewButtonColumn5.UseColumnTextForButtonValue = true;
-            // 
-            // dataGridViewButtonColumn6
-            // 
-            this.dataGridViewButtonColumn6.HeaderText = "Xoá";
-            this.dataGridViewButtonColumn6.Name = "dataGridViewButtonColumn6";
-            this.dataGridViewButtonColumn6.Text = "Xoá";
-            this.dataGridViewButtonColumn6.UseColumnTextForButtonValue = true;
+            this.gridQLHP.Location = new System.Drawing.Point(51, 170);
+            this.gridQLHP.Name = "gridQLHP";
+            this.gridQLHP.Size = new System.Drawing.Size(745, 228);
+            this.gridQLHP.TabIndex = 27;
             // 
             // button17
             // 
@@ -693,6 +657,35 @@
             this.gridGV.Size = new System.Drawing.Size(643, 228);
             this.gridGV.TabIndex = 14;
             // 
+            // maGiangVien
+            // 
+            this.maGiangVien.DataPropertyName = "MaGiangVien";
+            this.maGiangVien.HeaderText = "Mã giảng viên";
+            this.maGiangVien.MinimumWidth = 100;
+            this.maGiangVien.Name = "maGiangVien";
+            this.maGiangVien.Width = 200;
+            // 
+            // tenGiangVien
+            // 
+            this.tenGiangVien.DataPropertyName = "TenGiangVien";
+            this.tenGiangVien.HeaderText = "Tên giảng viên";
+            this.tenGiangVien.Name = "tenGiangVien";
+            this.tenGiangVien.Width = 200;
+            // 
+            // dataGridViewButtonColumn9
+            // 
+            this.dataGridViewButtonColumn9.HeaderText = "Sửa";
+            this.dataGridViewButtonColumn9.Name = "dataGridViewButtonColumn9";
+            this.dataGridViewButtonColumn9.Text = "Sửa";
+            this.dataGridViewButtonColumn9.UseColumnTextForButtonValue = true;
+            // 
+            // dataGridViewButtonColumn10
+            // 
+            this.dataGridViewButtonColumn10.HeaderText = "Xoá";
+            this.dataGridViewButtonColumn10.Name = "dataGridViewButtonColumn10";
+            this.dataGridViewButtonColumn10.Text = "Xoá";
+            this.dataGridViewButtonColumn10.UseColumnTextForButtonValue = true;
+            // 
             // btnAddQLGV
             // 
             this.btnAddQLGV.Location = new System.Drawing.Point(69, 105);
@@ -859,34 +852,48 @@
             // 
             this.bsQuanLyGiangVien.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
             // 
-            // maGiangVien
+            // maMonHoc
             // 
-            this.maGiangVien.DataPropertyName = "MaGiangVien";
-            this.maGiangVien.HeaderText = "Mã giảng viên";
-            this.maGiangVien.MinimumWidth = 100;
-            this.maGiangVien.Name = "maGiangVien";
-            this.maGiangVien.Width = 200;
+            this.maMonHoc.DataPropertyName = "MaMonHoc";
+            this.maMonHoc.HeaderText = "Mã môn học";
+            this.maMonHoc.Name = "maMonHoc";
             // 
-            // tenGiangVien
+            // tenMonHoc
             // 
-            this.tenGiangVien.DataPropertyName = "TenGiangVien";
-            this.tenGiangVien.HeaderText = "Tên giảng viên";
-            this.tenGiangVien.Name = "tenGiangVien";
-            this.tenGiangVien.Width = 200;
+            this.tenMonHoc.DataPropertyName = "TenMonHoc";
+            this.tenMonHoc.HeaderText = "Tên môn học";
+            this.tenMonHoc.Name = "tenMonHoc";
             // 
-            // dataGridViewButtonColumn9
+            // soDKHT
             // 
-            this.dataGridViewButtonColumn9.HeaderText = "Sửa";
-            this.dataGridViewButtonColumn9.Name = "dataGridViewButtonColumn9";
-            this.dataGridViewButtonColumn9.Text = "Sửa";
-            this.dataGridViewButtonColumn9.UseColumnTextForButtonValue = true;
+            this.soDKHT.HeaderText = "Số ĐKHT";
+            this.soDKHT.Name = "soDKHT";
             // 
-            // dataGridViewButtonColumn10
+            // DVPT
             // 
-            this.dataGridViewButtonColumn10.HeaderText = "Xoá";
-            this.dataGridViewButtonColumn10.Name = "dataGridViewButtonColumn10";
-            this.dataGridViewButtonColumn10.Text = "Xoá";
-            this.dataGridViewButtonColumn10.UseColumnTextForButtonValue = true;
+            this.DVPT.DataPropertyName = "DonViPhuTrach";
+            this.DVPT.HeaderText = "ĐVPT";
+            this.DVPT.Name = "DVPT";
+            // 
+            // tinChi
+            // 
+            this.tinChi.DataPropertyName = "TinChi";
+            this.tinChi.HeaderText = "Tín chỉ";
+            this.tinChi.Name = "tinChi";
+            // 
+            // dataGridViewButtonColumn5
+            // 
+            this.dataGridViewButtonColumn5.HeaderText = "Sửa";
+            this.dataGridViewButtonColumn5.Name = "dataGridViewButtonColumn5";
+            this.dataGridViewButtonColumn5.Text = "Sửa";
+            this.dataGridViewButtonColumn5.UseColumnTextForButtonValue = true;
+            // 
+            // dataGridViewButtonColumn6
+            // 
+            this.dataGridViewButtonColumn6.HeaderText = "Xoá";
+            this.dataGridViewButtonColumn6.Name = "dataGridViewButtonColumn6";
+            this.dataGridViewButtonColumn6.Text = "Xoá";
+            this.dataGridViewButtonColumn6.UseColumnTextForButtonValue = true;
             // 
             // FormMainQuanLy
             // 
@@ -905,7 +912,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridQLHP)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
@@ -919,6 +926,7 @@
             this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsQuanLyGiangVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsQuanLyHocPhan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -947,14 +955,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.DataGridView dataGridView6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maMonHoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenMonHoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soDKHT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DVPT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tinChi;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn5;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn6;
+        private System.Windows.Forms.DataGridView gridQLHP;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Label label12;
@@ -1014,5 +1015,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tenGiangVien;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn9;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn10;
+        private System.Windows.Forms.BindingSource bsQuanLyHocPhan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maMonHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenMonHoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soDKHT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DVPT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tinChi;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn5;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn6;
     }
 }

@@ -47,5 +47,13 @@ namespace _3S_project.GUI
         {
 
         }
+
+        private void txtcnQLHP(object sender, EventArgs e)
+        {
+            dataMonHoc dataMonHoc = new dataMonHoc();
+            var lstMonHoc = dataMonHoc.getlstMonHoc();
+            bsQuanLyHocPhan.DataSource = lstMonHoc;
+            gridQLHP.DataSource = bsQuanLyHocPhan;
+        }
     }
 }

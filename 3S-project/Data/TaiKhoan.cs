@@ -31,7 +31,7 @@ namespace _3S_project.Data
                         temp.Email = reader.GetString(4);
                         temp.TrangThai = reader.GetBoolean(5);
 
-                        if(reader.GetString(3)!= null || reader.GetString(3) != "")
+                        if(!reader.IsDBNull(3) )
                         {
                             dataGiangVien dataGiangVien = new dataGiangVien();
                             temp.GiangVien = dataGiangVien.getGiangVien(reader.GetInt32(3));

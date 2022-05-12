@@ -51,6 +51,12 @@
     <Compile Include="Data\dataMonHoc.cs" />
     <Compile Include="Data\DbUtils.cs" />
     <Compile Include="Data\TaiKhoan.cs" />
+    <Compile Include="GUI\FormAdmin\FormQuanLyLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyLop.Designer.cs">
+      <DependentUpon>FormQuanLyLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="GUI\FormGiangVien\" />
+    <Folder Include="GUI\FormQuanLy\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
