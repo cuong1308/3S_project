@@ -39,3 +39,14 @@ C:\Users\Administrator\Source\Repos\cuong1308\3S_project\3S-project\obj\Debug\_3
 C:\Users\Administrator\Source\Repos\cuong1308\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormSinhVien.SuaSV.resources
 C:\Users\Administrator\Source\Repos\cuong1308\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormSinhVien.ThemSinhVien.resources
 C:\Users\Administrator\Source\Repos\cuong1308\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormSinhVien.XoaSV.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormMonHoc.frmQuanLyMonHoc.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormMonHoc.SuaMonHoc.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormMonHoc.frmThemMonHoc.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormMonHoc.frmXoaMH.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormSinhVien.frmQuanLySinhVien.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormSinhVien.SuaSV.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormSinhVien.ThemSinhVien.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormSinhVien.XoaSV.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormQuanLyKhoa.FormKhoaNew.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormQuanLyKhoa.FormKhoaSua.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormQuanLyKhoa.FormQuanLyKhoa.resources

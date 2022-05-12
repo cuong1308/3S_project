@@ -79,6 +79,24 @@
     <Compile Include="GUI\FormAdmin\FormMonHoc\XoaMH.Designer.cs">
       <DependentUpon>XoaMH.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyKhoa\FormKhoaNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyKhoa\FormKhoaNew.Designer.cs">
+      <DependentUpon>FormKhoaNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyKhoa\FormKhoaSua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyKhoa\FormKhoaSua.Designer.cs">
+      <DependentUpon>FormKhoaSua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyKhoa\FormQuanLyKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyKhoa\FormQuanLyKhoa.Designer.cs">
+      <DependentUpon>FormQuanLyKhoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormAdmin\FormQuanLyLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +190,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAdmin\FormMonHoc\XoaMH.resx">
       <DependentUpon>XoaMH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyKhoa\FormKhoaNew.resx">
+      <DependentUpon>FormKhoaNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyKhoa\FormKhoaSua.resx">
+      <DependentUpon>FormKhoaSua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyKhoa\FormQuanLyKhoa.resx">
+      <DependentUpon>FormQuanLyKhoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAdmin\FormSinhVien\QuanLySinhVien.resx">
       <DependentUpon>QuanLySinhVien.cs</DependentUpon>

@@ -1,4 +1,5 @@
 ﻿using _3S_project.GUI.FormAdmin.FormMonHoc;
+using _3S_project.GUI.FormAdmin.FormQuanLyKhoa;
 using _3S_project.GUI.FormAdmin.FormSinhVien;
 using _3S_project.Model;
 using System;
@@ -32,7 +33,7 @@ namespace _3S_project.GUI.FormMain
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void quảnLýLớpToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -69,7 +70,8 @@ namespace _3S_project.GUI.FormMain
 
         private void quảnLýKhoaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormQuanLyKhoa formQuanLyKhoa = new FormQuanLyKhoa();
+            formQuanLyKhoa.ShowDialog();
         }
 
         private void theoTrungBìnhMônToolStripMenuItem_Click(object sender, EventArgs e)

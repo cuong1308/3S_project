@@ -74,6 +74,21 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
 
                 frmXoaMH frmXMH = new frmXoaMH(monHoc);
                 frmXMH.ShowDialog();
+
+                dataMonHoc dtMH = new dataMonHoc();
+
+                List<MonHoc> lst = dtMH.getlstMonHoc();
+                bindingQuanLyMonHoc.DataSource = lst;
+
+
+                // Hiển thị lên GUI / grid
+                maMonHoc.DataPropertyName = "MaMonHoc";
+                tenMonHoc.DataPropertyName = "TenMonHoc";
+                DVPT.DataPropertyName = "DonViPhuTrach";
+                tinChi.DataPropertyName = "TinChi";
+
+                dataGridView6.AutoGenerateColumns = false;
+                dataGridView6.DataSource = bindingQuanLyMonHoc;
             }
         }
     }

@@ -14,8 +14,10 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
 {
     public partial class frmXoaMH : Form
     {
+        MonHoc monHoc;
         public frmXoaMH(MonHoc monHoc)
         {
+            this.monHoc = monHoc;
             List<MonHoc> lst = new List<MonHoc>();
             lst.Add(monHoc);
             InitializeComponent();
@@ -32,7 +34,9 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            dataMonHoc dataMonHoc = new dataMonHoc();
+            dataMonHoc.Xoa(monHoc.MaMonHoc);
+            this.Close();
         }
     }
 }
