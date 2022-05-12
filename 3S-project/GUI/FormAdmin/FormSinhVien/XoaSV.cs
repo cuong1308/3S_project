@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _3S_project.GUI.FormAdmin.FormSinhVien
 {
-    public partial class frmQuanLySinhVien : Form
+    public partial class XoaSV : Form
     {
-        public frmQuanLySinhVien()
+        public XoaSV()
         {
             InitializeComponent();
         }

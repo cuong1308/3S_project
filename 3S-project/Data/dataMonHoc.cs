@@ -66,15 +66,14 @@ namespace _3S_project.Data
             }
         }
 
-        public int Them(int maMonHoc, string tenMonHoc,string donViPhuTrach, int tinChi)
+        public int Them( string tenMonHoc,string donViPhuTrach, int tinChi)
         {
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
                 command.Connection = cnn;
-                string sql = "Insert into MonHoc(MaMonHoc, TenMonHoc, DonViPhuTrach, TinChi, TrangThai) Values (@MaMonHoc,@TenMonHoc,@DonViPhuTrach,@TinChi,1)";
+                string sql = "Insert into MonHoc( TenMonHoc, DonViPhuTrach, TinChi, TrangThai) Values (@TenMonHoc,@DonViPhuTrach,@TinChi,1)";
                 command.CommandText = sql;
-                command.Parameters.AddWithValue("@MaMonHoc", maMonHoc);
                 command.Parameters.AddWithValue("@TenMonHoc", tenMonHoc);
                 command.Parameters.AddWithValue("@DonViPhuTrach", donViPhuTrach);
                 command.Parameters.AddWithValue("@TinChi", tinChi);
@@ -93,7 +92,7 @@ namespace _3S_project.Data
                 command.Connection = cnn;
                 string sql = "Update GiangVien set TenMonHoc = @TenMonHoc, DonViPhuTrach = @DonViPhuTrach, TinChi = @TinChi where MaMonHoc = @MaMonHoc";
                 command.CommandText = sql;
-                command.Parameters.AddWithValue("@MaMonHoc", maMonHoc);
+                
                 command.Parameters.AddWithValue("@TenMonHoc", tenMonHoc);
                 command.Parameters.AddWithValue("@DonViPhuTrach", donViPhuTrach);
                 command.Parameters.AddWithValue("@TinChi", tinChi);
