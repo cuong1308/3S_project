@@ -100,7 +100,7 @@ namespace _3S_project.Data
                 command.Connection = cnn;
                 string sql = "Update Khoa set TrangThai = 0 where MaKhoa = @MaKhoa";
                 command.CommandText = sql;
-                command.Parameters.AddWithValue("@MaGiangVien", maKhoa);
+                command.Parameters.AddWithValue("@MaKhoa", maKhoa);
                 var reader = command.ExecuteScalar();
 
                 return 0;
