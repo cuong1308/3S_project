@@ -92,7 +92,7 @@ namespace _3S_project.Data
                 command.Connection = cnn;
                 string sql = "Update GiangVien set TenMonHoc = @TenMonHoc, DonViPhuTrach = @DonViPhuTrach, TinChi = @TinChi where MaMonHoc = @MaMonHoc";
                 command.CommandText = sql;
-                command.Parameters.AddWithValue("@MaMonHoc", maMonHoc);
+                
                 command.Parameters.AddWithValue("@TenMonHoc", tenMonHoc);
                 command.Parameters.AddWithValue("@DonViPhuTrach", donViPhuTrach);
                 command.Parameters.AddWithValue("@TinChi", tinChi);

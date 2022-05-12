@@ -1,4 +1,6 @@
-﻿using _3S_project.Model;
+﻿using _3S_project.GUI.FormAdmin.FormMonHoc;
+using _3S_project.GUI.FormAdmin.FormSinhVien;
+using _3S_project.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,7 +52,8 @@ namespace _3S_project.GUI.FormMain
 
         private void quảnLýMônHọcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmQuanLyMonHoc frmMH = new frmQuanLyMonHoc();
+            frmMH.ShowDialog();
         }
 
         private void quảnLýGiảngViênToolStripMenuItem_Click(object sender, EventArgs e)
@@ -60,7 +63,8 @@ namespace _3S_project.GUI.FormMain
 
         private void quảnLýSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmQuanLySinhVien frmQLSV = new frmQuanLySinhVien();
+            frmQLSV.ShowDialog();
         }
 
         private void quảnLýKhoaToolStripMenuItem_Click(object sender, EventArgs e)

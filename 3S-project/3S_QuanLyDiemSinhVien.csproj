@@ -55,6 +55,30 @@
     <Compile Include="Data\dataSinhVien.cs" />
     <Compile Include="Data\DbUtils.cs" />
     <Compile Include="Data\TaiKhoan.cs" />
+    <Compile Include="GUI\FormAdmin\FormMonHoc\QuanLyMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormMonHoc\QuanLyMonHoc.Designer.cs">
+      <DependentUpon>QuanLyMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormMonHoc\SuaMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormMonHoc\SuaMonHoc.Designer.cs">
+      <DependentUpon>SuaMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormMonHoc\ThemMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormMonHoc\ThemMonHoc.Designer.cs">
+      <DependentUpon>ThemMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormMonHoc\XoaMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormMonHoc\XoaMH.Designer.cs">
+      <DependentUpon>XoaMH.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormAdmin\FormQuanLyLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +90,24 @@
     </Compile>
     <Compile Include="GUI\FormAdmin\FormSinhVien\QuanLySinhVien.Designer.cs">
       <DependentUpon>QuanLySinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormSinhVien\SuaSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormSinhVien\SuaSV.Designer.cs">
+      <DependentUpon>SuaSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormSinhVien\ThemSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormSinhVien\ThemSinhVien.Designer.cs">
+      <DependentUpon>ThemSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormSinhVien\XoaSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormSinhVien\XoaSV.Designer.cs">
+      <DependentUpon>XoaSV.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormLogin.cs">
       <SubType>Form</SubType>
@@ -119,6 +161,30 @@
     <Compile Include="GUI\Model\TaiKhoan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\FormAdmin\FormMonHoc\QuanLyMonHoc.resx">
+      <DependentUpon>QuanLyMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormMonHoc\SuaMonHoc.resx">
+      <DependentUpon>SuaMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormMonHoc\ThemMonHoc.resx">
+      <DependentUpon>ThemMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormMonHoc\XoaMH.resx">
+      <DependentUpon>XoaMH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormSinhVien\QuanLySinhVien.resx">
+      <DependentUpon>QuanLySinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormSinhVien\SuaSV.resx">
+      <DependentUpon>SuaSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormSinhVien\ThemSinhVien.resx">
+      <DependentUpon>ThemSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormSinhVien\XoaSV.resx">
+      <DependentUpon>XoaSV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>

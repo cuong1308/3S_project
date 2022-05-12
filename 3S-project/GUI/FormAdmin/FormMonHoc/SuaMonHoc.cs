@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _3S_project.GUI.FormAdmin.FormSinhVien
+namespace _3S_project.GUI.FormAdmin.FormMonHoc
 {
-    public partial class frmQuanLySinhVien : Form
+    public partial class SuaMonHoc : Form
     {
-        public frmQuanLySinhVien()
+        public SuaMonHoc()
         {
             InitializeComponent();
         }
