@@ -36,6 +36,34 @@ namespace _3S_project.Data
             }
         }
 
+        public List<GiangVien> getlstGiangVien(string tenGiangVien)
+        {
+            using (SqlConnection cnn = DbUtils.GetConnection())
+            {
+                string tenGiangVien_like = "%" + tenGiangVien + "%";
+                var command = new SqlCommand();
+                command.Connection = cnn;
+                string sql = "SELECT MaGiangVien, TenGiangVien FROM GiangVien where TrangThai = 1 and TenGiangVien like @TenGiangVien";
+                command.CommandText = sql;
+                command.Parameters.AddWithValue("@TenGiangVien", tenGiangVien_like);
+                var reader = command.ExecuteReader();
+
+                List<GiangVien> lst = new List<GiangVien>();
+                while (reader.Read())
+                {
+                    GiangVien temp = new GiangVien();
+                    temp.MaGiangVien = reader.GetInt32(0);
+                    temp.TenGiangVien = reader.GetString(1);
+                    lst.Add(temp);
+                }
+                cnn.Close();
+                return lst;
+
+
+
+            }
+        }
+
         public GiangVien getGiangVien(int maGiangVien)
         {
             using (SqlConnection cnn = DbUtils.GetConnection())
@@ -61,8 +89,9 @@ namespace _3S_project.Data
             }
         }
 
-        public int Them(string tenGiangVien)
+        public bool Them(string tenGiangVien)
         {
+            bool result = false;
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
@@ -70,14 +99,15 @@ namespace _3S_project.Data
                 string sql = "Insert into GiangVien(TenGiangVien,TrangThai) Values (@TenGiangVien,1)";
                 command.CommandText = sql;
                 command.Parameters.AddWithValue("@TenGiangVien", tenGiangVien);
-                var reader = command.ExecuteScalar();
-
-                return 0;
+                result = command.ExecuteNonQuery() > 0;
+                cnn.Close();
             }
+            return result;
         }
 
-        public int Sua(int maGiangVien, string tenGiangVien)
+        public bool Sua(int maGiangVien, string tenGiangVien)
         {
+            bool result = false;
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
@@ -86,14 +116,15 @@ namespace _3S_project.Data
                 command.CommandText = sql;
                 command.Parameters.AddWithValue("@MaGiangVien", maGiangVien);
                 command.Parameters.AddWithValue("@TenGiangVien", tenGiangVien);
-                var reader = command.ExecuteScalar();
-
-                return 0;
+                result = command.ExecuteNonQuery() > 0;
+                cnn.Close();
             }
+            return result;
         }
 
-        public int Xoa(int maGiangVien)
+        public bool Xoa(int maGiangVien)
         {
+            bool result = false;
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
@@ -101,10 +132,10 @@ namespace _3S_project.Data
                 string sql = "Update GiangVien set TrangThai = 0 where MaGiangVien = @MaGiangVien";
                 command.CommandText = sql;
                 command.Parameters.AddWithValue("@MaGiangVien", maGiangVien);
-                var reader = command.ExecuteScalar();
-
-                return 0;
+                result = command.ExecuteNonQuery() > 0;
+                cnn.Close();
             }
+            return result;
         }
 
     }

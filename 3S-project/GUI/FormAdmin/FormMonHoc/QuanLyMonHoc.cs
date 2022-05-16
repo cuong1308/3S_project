@@ -18,6 +18,7 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
         public frmQuanLyMonHoc()
         {
             InitializeComponent();
+            frmQuanLyMonHoc_Load();
         }
 
         private void label13_Click(object sender, EventArgs e)
@@ -25,7 +26,7 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
 
         }
 
-        private void frmQuanLyMonHoc_Load(object sender, EventArgs e)
+        private void frmQuanLyMonHoc_Load()
         {
             dataMonHoc dtMH = new dataMonHoc();
 
@@ -114,6 +115,17 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
                 dataGridView6.AutoGenerateColumns = false;
                 dataGridView6.DataSource = bindingQuanLyMonHoc;
             }
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            dataMonHoc dtMH = new dataMonHoc();
+
+            List<MonHoc> lst = dtMH.getlstMonHoc(textBox6.Text);
+            bindingQuanLyMonHoc.DataSource = lst;
+
+            dataGridView6.AutoGenerateColumns = false;
+            dataGridView6.DataSource = bindingQuanLyMonHoc;
         }
     }
 }

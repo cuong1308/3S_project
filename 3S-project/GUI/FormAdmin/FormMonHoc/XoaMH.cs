@@ -34,9 +34,17 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataMonHoc dtMH = new dataMonHoc();
-            dtMH.Xoa(monHoc.MaMonHoc);
-            this.Close();
+            dataMonHoc dtMonHoc = new dataMonHoc();
+            if (dtMonHoc.Xoa(monHoc.MaMonHoc))
+            {
+                MessageBox.Show("Xoá thông tin môn học thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Xoá thông tin môn học thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

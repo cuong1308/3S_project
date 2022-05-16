@@ -15,5 +15,9 @@ namespace _3S_project.Model
         public float DiemKiemTra2 { get; set; }
         public float DiemKiemTra3 { get; set; }
         public float DiemThi { get; set; }
+        public int MaSinhVien { get { return SinhVien.MaSinhVien; } }
+        public string TenSinhVien { get { return SinhVien.TenSinhVien; } }
+        public string TenLop { get {return SinhVien.Lop.TenLop; } }
+        public string TenLopHocPhan { get { return LopHocPhan.TenLopHocPhan; } }
     }
 }

@@ -30,18 +30,31 @@ namespace _3S_project.GUI.FormAdmin.FormQuanLyKhoa
         {
             // 1. Thu thập dữ liệu trên GUI
 
-            string tenKhoa = txtTenKhoa.Text;
+            string tenKhoa = txtTenKhoa.Text.Trim();
 
             // 2. Thành lập đối tượng sach
-            Khoa x = new Khoa();
 
-            x.TenKhoa = tenKhoa;
+            //Kiểm tra tính hợp lệ của dữ liệu
+            if (string.IsNullOrWhiteSpace(tenKhoa))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             // 3. Thực hiện lưu lên csdl
             dataKhoa dtKhoa = new dataKhoa();
-            dtKhoa.Them(x.TenKhoa);
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if (dtKhoa.Them(tenKhoa))
+            {
+                MessageBox.Show("Thêm thông tin khoa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Thêm thông tin khoa thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
         }
     }
 }

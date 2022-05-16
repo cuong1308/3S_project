@@ -29,22 +29,25 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.bsQuanLySinhVien = new System.Windows.Forms.BindingSource(this.components);
             this.maSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenSinhVIen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenLop1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsQuanLySinhVien)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox4
@@ -53,9 +56,12 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(294, 20);
             this.textBox4.TabIndex = 35;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // dataGridView4
             // 
+            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maSinhVien,
@@ -64,71 +70,24 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             this.gioiTinh,
             this.diaChi,
             this.tenLop1,
-            this.dataGridViewButtonColumn1,
-            this.dataGridViewButtonColumn2});
+            this.Sua,
+            this.Xoa});
             this.dataGridView4.Location = new System.Drawing.Point(-1, 190);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(864, 188);
             this.dataGridView4.TabIndex = 34;
-            // 
-            // maSinhVien
-            // 
-            this.maSinhVien.DataPropertyName = "MaSinhVien";
-            this.maSinhVien.HeaderText = "Mã sinh viên";
-            this.maSinhVien.Name = "maSinhVien";
-            // 
-            // tenSinhVIen
-            // 
-            this.tenSinhVIen.DataPropertyName = "TenSinhVien";
-            this.tenSinhVIen.HeaderText = "Tên sinh viên";
-            this.tenSinhVIen.Name = "tenSinhVIen";
-            // 
-            // sinhVien
-            // 
-            this.sinhVien.DataPropertyName = "NgaySinh";
-            this.sinhVien.HeaderText = "Ngày sinh";
-            this.sinhVien.Name = "sinhVien";
-            // 
-            // gioiTinh
-            // 
-            this.gioiTinh.DataPropertyName = "GioiTinh";
-            this.gioiTinh.HeaderText = "Giới tính";
-            this.gioiTinh.Name = "gioiTinh";
-            // 
-            // diaChi
-            // 
-            this.diaChi.DataPropertyName = "DiaChi";
-            this.diaChi.HeaderText = "Địa chỉ";
-            this.diaChi.Name = "diaChi";
-            // 
-            // tenLop1
-            // 
-            this.tenLop1.DataPropertyName = "MaLop";
-            this.tenLop1.HeaderText = "Mã lớp";
-            this.tenLop1.Name = "tenLop1";
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            this.dataGridViewButtonColumn1.HeaderText = "Sửa";
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.Text = "Sửa";
-            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-            // 
-            // dataGridViewButtonColumn2
-            // 
-            this.dataGridViewButtonColumn2.HeaderText = "Xoá";
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.Text = "Xoá";
-            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
+            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
+            this.dataGridView4.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView4_CellFormatting);
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(69, 145);
+            this.button12.Location = new System.Drawing.Point(80, 144);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(169, 30);
             this.button12.TabIndex = 33;
             this.button12.Text = "Thêm mới sinh viên";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 
@@ -167,6 +126,61 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             this.label9.Size = new System.Drawing.Size(0, 25);
             this.label9.TabIndex = 29;
             // 
+            // maSinhVien
+            // 
+            this.maSinhVien.DataPropertyName = "MaSinhVien";
+            this.maSinhVien.HeaderText = "Mã sinh viên";
+            this.maSinhVien.Name = "maSinhVien";
+            // 
+            // tenSinhVIen
+            // 
+            this.tenSinhVIen.DataPropertyName = "TenSinhVien";
+            this.tenSinhVIen.HeaderText = "Tên sinh viên";
+            this.tenSinhVIen.Name = "tenSinhVIen";
+            // 
+            // sinhVien
+            // 
+            this.sinhVien.DataPropertyName = "DateTime";
+            this.sinhVien.HeaderText = "Ngày sinh";
+            this.sinhVien.Name = "sinhVien";
+            // 
+            // gioiTinh
+            // 
+            this.gioiTinh.DataPropertyName = "GioiTinh";
+            this.gioiTinh.HeaderText = "Giới tính";
+            this.gioiTinh.Name = "gioiTinh";
+            // 
+            // diaChi
+            // 
+            this.diaChi.DataPropertyName = "DiaChi";
+            this.diaChi.HeaderText = "Địa chỉ";
+            this.diaChi.Name = "diaChi";
+            // 
+            // tenLop1
+            // 
+            this.tenLop1.DataPropertyName = "TenLop";
+            this.tenLop1.HeaderText = "Tên lớp";
+            this.tenLop1.Name = "tenLop1";
+            this.tenLop1.Width = 150;
+            // 
+            // Sua
+            // 
+            this.Sua.DataPropertyName = "Sua";
+            this.Sua.HeaderText = "Sửa";
+            this.Sua.Name = "Sua";
+            this.Sua.Text = "Sửa";
+            this.Sua.UseColumnTextForButtonValue = true;
+            this.Sua.Width = 75;
+            // 
+            // Xoa
+            // 
+            this.Xoa.DataPropertyName = "Xoa";
+            this.Xoa.HeaderText = "Xoá";
+            this.Xoa.Name = "Xoa";
+            this.Xoa.Text = "Xoá";
+            this.Xoa.UseColumnTextForButtonValue = true;
+            this.Xoa.Width = 75;
+            // 
             // frmQuanLySinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,6 +196,7 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             this.Name = "frmQuanLySinhVien";
             this.Text = "QuanLySinhVien";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsQuanLySinhVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,18 +206,19 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
 
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.BindingSource bsQuanLySinhVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn maSinhVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenSinhVIen;
         private System.Windows.Forms.DataGridViewTextBoxColumn sinhVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn diaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenLop1;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewButtonColumn Sua;
+        private System.Windows.Forms.DataGridViewButtonColumn Xoa;
     }
 }

@@ -48,5 +48,13 @@ namespace _3S_project.GUI
 
 
         }
+
+        private void txtMatKhau_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                button1_Click(sender, e);
+            }
+        }
     }
 }

@@ -64,3 +64,5 @@ C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.Form
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormQuanLyLop.suasv.resources
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormQuanLyLop.themsv.resources
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormQuanLyLop.Xoasv.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormQuanLyKhoa.FormKhoaXoa.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormDiem.QuanLyDiem.resources

@@ -22,9 +22,31 @@ namespace _3S_project.GUI.FormAdmin.FormQuanLyKhoa
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataKhoa dataKhoa = new dataKhoa();
-            dataKhoa.Sua(int.Parse( label4.Text), textBox1.Text);
-            this.Close();
+            // 1. Thu thập dữ liệu trên GUI
+
+            string tenKhoa = textBox1.Text.Trim();
+
+            // 2. Thành lập đối tượng sach
+
+            //Kiểm tra tính hợp lệ của dữ liệu
+            if (string.IsNullOrWhiteSpace(tenKhoa))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 3. Thực hiện lưu lên csdl
+            dataKhoa dtKhoa = new dataKhoa();
+            if (dtKhoa.Sua(int.Parse(label4.Text),tenKhoa))
+            {
+                MessageBox.Show("Sửa thông tin khoa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Sửa thông tin khoa thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void FormKhoaSua_Load(object sender, EventArgs e)

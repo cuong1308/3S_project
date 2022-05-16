@@ -41,6 +41,39 @@ namespace _3S_project.Data
 
             }
         }
+        public List<LopHocPhan> getlstLopHocPhan(string tenLopHocPhan)
+        {
+            using (SqlConnection cnn = DbUtils.GetConnection())
+            {
+                string tenLopHocPhan_like = "%" + tenLopHocPhan + "%";
+                var command = new SqlCommand();
+                command.Connection = cnn;
+                string sql = "SELECT MaLopHocPhan, TenLopHocPhan,HocKi, NamHoc, MaMonHoc, MaGiangVien FROM LopHocPhan where TrangThai = 1 and TenLopHocPhan like @TenLopHocPhan";
+                command.CommandText = sql;
+                command.Parameters.AddWithValue("@TenLopHocPhan", tenLopHocPhan_like);
+                var reader = command.ExecuteReader();
+
+                List<LopHocPhan> lst = new List<LopHocPhan>();
+                while (reader.Read())
+                {
+                    LopHocPhan temp = new LopHocPhan();
+                    temp.MaLopHocPhan = reader.GetInt32(0);
+                    temp.TenLopHocPhan = reader.GetString(1);
+                    temp.HocKi = reader.GetInt32(2);
+                    temp.NamHoc = reader.GetString(3);
+                    dataMonHoc dataMonHoc = new dataMonHoc();
+                    dataGiangVien dataGiangVien = new dataGiangVien();
+                    temp.MonHoc = dataMonHoc.getMonHoc(reader.GetInt32(4));
+                    temp.GiangVien = dataGiangVien.getGiangVien(reader.GetInt32(5));
+                    lst.Add(temp);
+                }
+                cnn.Close();
+                return lst;
+
+
+
+            }
+        }
 
         public LopHocPhan getLopHocPhan(int maLopHocPhan)
         {
@@ -73,8 +106,9 @@ namespace _3S_project.Data
             }
         }
 
-        public int Them( string tenLopHocPhan, int hocKi, string namHoc, int maMonHoc, int maGiangVien)
+        public bool Them( string tenLopHocPhan, int hocKi, string namHoc, int maMonHoc, int maGiangVien)
         {
+            bool result = false;
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
@@ -87,14 +121,15 @@ namespace _3S_project.Data
                 command.Parameters.AddWithValue("@MaMonHoc", maMonHoc);
                 command.Parameters.AddWithValue("@MaGiangVien", maGiangVien);
 
-                var reader = command.ExecuteScalar();
-
-                return 0;
+                result = command.ExecuteNonQuery() > 0;
+                cnn.Close();
             }
+            return result;
         }
 
-        public int Sua(int maLopHocPhan, string tenLopHocPhan, int hocKi, string namHoc, int maMonHoc, int maGiangVien)
+        public bool Sua(int maLopHocPhan, string tenLopHocPhan, int hocKi, string namHoc, int maMonHoc, int maGiangVien)
         {
+            bool result = false;
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
@@ -107,14 +142,15 @@ namespace _3S_project.Data
                 command.Parameters.AddWithValue("@NamHoc", namHoc);
                 command.Parameters.AddWithValue("@MaMonHoc", maMonHoc);
                 command.Parameters.AddWithValue("@MaGiangVien", maGiangVien);
-                var reader = command.ExecuteScalar();
-
-                return 0;
+                result = command.ExecuteNonQuery() > 0;
+                cnn.Close();
             }
+            return result;
         }
 
-        public int Xoa(int maLopHocPhan)
+        public bool Xoa(int maLopHocPhan)
         {
+            bool result = false;
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
@@ -122,10 +158,10 @@ namespace _3S_project.Data
                 string sql = "Update LopHocPhan set TrangThai = 0 where MaLopHocPhan = @MaLopHocPhan";
                 command.CommandText = sql;
                 command.Parameters.AddWithValue("@MaLopHocPhan", maLopHocPhan);
-                var reader = command.ExecuteScalar();
-
-                return 0;
+                result = command.ExecuteNonQuery() > 0;
+                cnn.Close();
             }
+            return result;
         }
     }
 }

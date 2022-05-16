@@ -45,7 +45,7 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(367, 138);
+            this.button1.Location = new System.Drawing.Point(382, 117);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -58,13 +58,14 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(12, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(664, 86);
+            this.groupBox1.Size = new System.Drawing.Size(445, 86);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin Sinh viên";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -73,7 +74,7 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
             this.Column5});
             this.dataGridView1.Location = new System.Drawing.Point(1, 21);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(487, 86);
+            this.dataGridView1.Size = new System.Drawing.Size(444, 59);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -104,11 +105,11 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 219);
+            this.ClientSize = new System.Drawing.Size(469, 154);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmXoaMH";
-            this.Text = "XoaMH";
+            this.Text = "Xoá môn học";
             this.Load += new System.EventHandler(this.frmXoaMH_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

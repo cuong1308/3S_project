@@ -15,6 +15,7 @@ namespace _3S_project.GUI.FormMain
         public FormMainQuanLy(Model.TaiKhoan tk)
         {
             InitializeComponent();
+            label2.Text = "Xin chào " + tk.TenUser;
         }
     }
 }

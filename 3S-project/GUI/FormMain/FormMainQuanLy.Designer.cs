@@ -44,6 +44,8 @@
             this.theoTrungBìnhMônToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.theoMônHọcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.theoLớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,13 +74,13 @@
             // đổiMậtKhẩuToolStripMenuItem
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             // 
             // quảnLýLớpToolStripMenuItem
@@ -165,11 +167,33 @@
             this.theoLớpToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.theoLớpToolStripMenuItem.Text = "Theo Lớp";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(55, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 24);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Xìn chào, ??";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(50, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(627, 29);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Chào mừng bạn đến với phần mềm quản lý điểm sinh viên";
+            // 
             // FormMainQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FormMainQuanLy";
             this.Text = "Hê thống quản lý điểm sinh viên (Quản lý)";
@@ -198,5 +222,7 @@
         private System.Windows.Forms.ToolStripMenuItem theoTrungBìnhMônToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem theoMônHọcToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem theoLớpToolStripMenuItem;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

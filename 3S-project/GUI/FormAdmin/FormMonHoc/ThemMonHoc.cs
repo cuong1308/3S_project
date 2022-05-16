@@ -29,25 +29,35 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
         {
             // 1. Thu thập dữ liệu trên GUI
 
-            string tenMonHoc = txtTenMH.Text;
-            string DVPT = cboDVPT.Text;
+            string tenMonHoc = txtTenMH.Text.Trim();
+            string DVPT = cboDVPT.Text.Trim();
             //int maKhoa = selectedNXB.MaKhoa;
-            string tinChi = txtTC.Text;
+            string tinChi = numTinChi.Text.Trim();
 
-            // 2. Thành lập đối tượng 
-            MonHoc x = new MonHoc();
 
-            x.TenMonHoc = tenMonHoc;
+            //Kiểm tra tính hợp lệ của dữ liệu
+            if (string.IsNullOrWhiteSpace(tenMonHoc) || string.IsNullOrWhiteSpace(DVPT) || string.IsNullOrWhiteSpace(tinChi))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            
 
 
             // 3. Thực hiện lưu lên csdl
             dataMonHoc dtMonHoc = new dataMonHoc();
-            dtMonHoc.Them(x.TenMonHoc,DVPT,int.Parse(tinChi));
+            if(dtMonHoc.Them(tenMonHoc,DVPT,int.Parse(tinChi)))
+            {
+                MessageBox.Show("Thêm thông tin môn học thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Thêm thông tin môn học thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            
-
-            this.DialogResult = DialogResult.OK;
-            this.Close();
         }
 
         private void cboDVPT_SelectedIndexChanged(object sender, EventArgs e)
@@ -56,6 +66,11 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
         }
 
         private void frmThemMonHoc_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTenMH_TextChanged(object sender, EventArgs e)
         {
 
         }

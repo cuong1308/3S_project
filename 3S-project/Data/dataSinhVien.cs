@@ -25,12 +25,12 @@ namespace _3S_project.Data
                 {
                     SinhVien temp = new SinhVien();
                     temp.MaSinhVien = reader.GetInt32(0);
-                    temp.TenSinhVen = reader.GetString(1);
+                    temp.TenSinhVien = reader.GetString(1);
                     temp.GioiTinh = reader.GetBoolean(2);
                     temp.DateTime = reader.GetDateTime(3);
                     temp.DiaChi = reader.GetString(4);
                     dataLop dataLop = new dataLop();
-                    temp.Lop = dataLop.getLop(reader.GetInt32(6));
+                    temp.Lop = dataLop.getLop(reader.GetInt32(5));
                     lst.Add(temp);
                 }
                 cnn.Close();
@@ -41,6 +41,40 @@ namespace _3S_project.Data
             }
         }
 
+
+        public List<SinhVien> getlstSinhVien(string tenSinhVien)
+        {
+            using (SqlConnection cnn = DbUtils.GetConnection())
+            {
+
+                string tenSinhVien_like = "%" + tenSinhVien + "%";
+                var command = new SqlCommand();
+                command.Connection = cnn;
+                string sql = "SELECT MaSinhVien, TenSinhVien, GioiTinh, NgaySinh,DiaChi, MaLop FROM SinhVien where TrangThai = 1 and TenSinhVien like @TenSinhVien";
+                command.CommandText = sql;
+                command.Parameters.AddWithValue("@TenSinhVien", tenSinhVien_like);
+                var reader = command.ExecuteReader();
+
+                List<SinhVien> lst = new List<SinhVien>();
+                while (reader.Read())
+                {
+                    SinhVien temp = new SinhVien();
+                    temp.MaSinhVien = reader.GetInt32(0);
+                    temp.TenSinhVien = reader.GetString(1);
+                    temp.GioiTinh = reader.GetBoolean(2);
+                    temp.DateTime = reader.GetDateTime(3);
+                    temp.DiaChi = reader.GetString(4);
+                    dataLop dataLop = new dataLop();
+                    temp.Lop = dataLop.getLop(reader.GetInt32(5));
+                    lst.Add(temp);
+                }
+                cnn.Close();
+                return lst;
+
+
+
+            }
+        }
         public SinhVien getSinhVien(int maSinhVien)
         {
             using (SqlConnection cnn = DbUtils.GetConnection())
@@ -56,12 +90,12 @@ namespace _3S_project.Data
                 if (reader.Read())
                 {
                     temp.MaSinhVien = reader.GetInt32(0);
-                    temp.TenSinhVen = reader.GetString(1);
+                    temp.TenSinhVien = reader.GetString(1);
                     temp.GioiTinh = reader.GetBoolean(2);
                     temp.DateTime = reader.GetDateTime(3);
                     temp.DiaChi = reader.GetString(4);
                     dataLop dataLop = new dataLop();
-                    temp.Lop = dataLop.getLop(reader.GetInt32(6));
+                    temp.Lop = dataLop.getLop(reader.GetInt32(5));
                 }
                 cnn.Close();
                 return temp;
@@ -71,8 +105,9 @@ namespace _3S_project.Data
             }
         }
 
-        public int Them(string tenSinhVien, bool gioiTinh, DateTime ngaySinh, string diaChi,int maLop)
+        public bool Them(string tenSinhVien, bool gioiTinh, DateTime ngaySinh, string diaChi,int maLop)
         {
+            bool result = false;
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
@@ -84,14 +119,15 @@ namespace _3S_project.Data
                 command.Parameters.AddWithValue("@NgaySinh", ngaySinh);
                 command.Parameters.AddWithValue("@DiaChi", diaChi);
                 command.Parameters.AddWithValue("@MaLop", maLop);
-                var reader = command.ExecuteScalar();
-
-                return 0;
+                result = command.ExecuteNonQuery() > 0;
+                cnn.Close();
             }
+            return result;
         }
 
-        public int Sua(int maSinhVien, string tenSinhVien, bool gioiTinh, DateTime ngaySinh, string diaChi, int maLop)
+        public bool Sua(int maSinhVien, string tenSinhVien, bool gioiTinh, DateTime ngaySinh, string diaChi, int maLop)
         {
+            bool result = false;
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
@@ -104,14 +140,15 @@ namespace _3S_project.Data
                 command.Parameters.AddWithValue("@NgaySinh", ngaySinh);
                 command.Parameters.AddWithValue("@DiaChi", diaChi);
                 command.Parameters.AddWithValue("@MaLop", maLop);
-                var reader = command.ExecuteScalar();
-
-                return 0;
+                result = command.ExecuteNonQuery() > 0;
+                cnn.Close();
             }
+            return result;
         }
 
-        public int Xoa(int maSinhVien)
+        public bool Xoa(int maSinhVien)
         {
+            bool result = false;
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
@@ -119,10 +156,10 @@ namespace _3S_project.Data
                 string sql = "Update SinhVien set TrangThai = 0 where MaSinhVien = @MaSinhVien";
                 command.CommandText = sql;
                 command.Parameters.AddWithValue("@MaSinhVien", maSinhVien);
-                var reader = command.ExecuteScalar();
-
-                return 0;
+                result = command.ExecuteNonQuery() > 0;
+                cnn.Close();
             }
+            return result;
         }
     }
 }

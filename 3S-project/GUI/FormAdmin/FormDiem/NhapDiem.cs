@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _3S_project.GUI.FormMain
+namespace _3S_project.GUI.FormAdmin.FormDiem
 {
-    public partial class FormMainGiangVien : Form
+    public partial class NhapDiem : Form
     {
-        public FormMainGiangVien(Model.TaiKhoan tk)
+        public NhapDiem(Model.Diem diem)
         {
             InitializeComponent();
-            label2.Text = "Xin chào " + tk.TenUser;
         }
     }
 }

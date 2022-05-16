@@ -17,9 +17,10 @@ namespace _3S_project.GUI.FormAdmin.FormQuanLyKhoa
         public FormQuanLyKhoa()
         {
             InitializeComponent();
+            FormQuanLyKhoa_Load();
         }
 
-        private void FormQuanLyKhoa_Load(object sender, EventArgs e)
+        private void FormQuanLyKhoa_Load()
         {
             dataKhoa dtKhoa = new dataKhoa();
 
@@ -31,34 +32,26 @@ namespace _3S_project.GUI.FormAdmin.FormQuanLyKhoa
             maKhoa.DataPropertyName = "MaKhoa";
             tenKhoa.DataPropertyName = "TenKhoa";
 
-
-
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.DataSource = bsQuanLyKhoa;
-
-            
-
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView2.Columns[e.ColumnIndex].Name == "xoa3")
             {
-                if (MessageBox.Show("Bạn có chắc chắn muốn xóa khoa này không?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
+                
                     // Xoá quyển sách đang được chọn trên grid
                     // 1. Xác định sach đang được chọn
                     DataGridViewRow selectedRow = dataGridView2.Rows[e.RowIndex];
                     Khoa khoa = (Khoa)selectedRow.DataBoundItem;
 
-                    // 2. Thực hiện xoá bizSach.Xoa(sach)
-                    dataKhoa dtKhoa = new dataKhoa();
-                    dtKhoa.Xoa(khoa.MaKhoa);
+                // 2. Thực hiện xoá bizSach.Xoa(sach)
+                FormKhoaXoa formKhoaXoa = new FormKhoaXoa(khoa);
 
-                    // Xoá đối tượng Sach khỏi grid
-                    bsQuanLyKhoa.RemoveCurrent();
+                FormQuanLyKhoa_Load();
 
-                }
+                
             }
             if (dataGridView2.Columns[e.ColumnIndex].Name == "sua3")
 
@@ -92,12 +85,17 @@ namespace _3S_project.GUI.FormAdmin.FormQuanLyKhoa
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            dataKhoa dtKhoa = new dataKhoa();
 
-        }
+            List<Khoa> lst = dtKhoa.getlstKhoa(textBox2.Text);
+            bsQuanLyKhoa.DataSource = lst;
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            
+            // Hiển thị lên GUI / grid
+            maKhoa.DataPropertyName = "MaKhoa";
+            tenKhoa.DataPropertyName = "TenKhoa";
+
+            dataGridView2.AutoGenerateColumns = false;
+            dataGridView2.DataSource = bsQuanLyKhoa;
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -105,20 +103,7 @@ namespace _3S_project.GUI.FormAdmin.FormQuanLyKhoa
             FormKhoaNew frmKhoaNew = new FormKhoaNew();
             frmKhoaNew.ShowDialog();
 
-            dataKhoa dtKhoa = new dataKhoa();
-
-            List<Khoa> lst = dtKhoa.getlstKhoa();
-            bsQuanLyKhoa.DataSource = lst;
-
-
-            // Hiển thị lên GUI / grid
-            maKhoa.DataPropertyName = "MaKhoa";
-            tenKhoa.DataPropertyName = "TenKhoa";
-
-
-
-            dataGridView2.AutoGenerateColumns = false;
-            dataGridView2.DataSource = bsQuanLyKhoa;
+            FormQuanLyKhoa_Load();
 
         }
     }

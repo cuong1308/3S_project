@@ -1,4 +1,5 @@
-﻿using _3S_project.GUI.FormAdmin.FormMonHoc;
+﻿using _3S_project.GUI.FormAdmin.FormDiem;
+using _3S_project.GUI.FormAdmin.FormMonHoc;
 using _3S_project.GUI.FormAdmin.FormQuanLyKhoa;
 using _3S_project.GUI.FormAdmin.FormSinhVien;
 using _3S_project.GUI.FormQuanLyLop;
@@ -21,6 +22,7 @@ namespace _3S_project.GUI.FormMain
         public FormMainAdmin(TaiKhoan tk)
         {
             InitializeComponent();
+            label2.Text = "Xin chào "+ tk.TenUser;
         }
 
         private void quảnLýTaiffKhoảnUserToolStripMenuItem_Click(object sender, EventArgs e)
@@ -53,7 +55,8 @@ namespace _3S_project.GUI.FormMain
 
         private void quảnLýToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            QuanLyDiem quanLyDiem = new QuanLyDiem();
+            quanLyDiem.ShowDialog();
         }
 
         private void quảnLýMônHọcToolStripMenuItem_Click(object sender, EventArgs e)

@@ -30,104 +30,63 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
         private void InitializeComponent()
         {
             this.btnThem = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbxGioiTinh = new System.Windows.Forms.ComboBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtTenSinhVien = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.cbxLop = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(470, 225);
+            this.btnThem.Location = new System.Drawing.Point(254, 226);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 29;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // comboBox4
+            // cbxGioiTinh
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(443, 31);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(53, 21);
-            this.comboBox4.TabIndex = 28;
+            this.cbxGioiTinh.FormattingEnabled = true;
+            this.cbxGioiTinh.Location = new System.Drawing.Point(112, 104);
+            this.cbxGioiTinh.Name = "cbxGioiTinh";
+            this.cbxGioiTinh.Size = new System.Drawing.Size(53, 21);
+            this.cbxGioiTinh.TabIndex = 28;
             // 
-            // comboBox3
+            // txtDiaChi
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(200, 139);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(50, 21);
-            this.comboBox3.TabIndex = 27;
+            this.txtDiaChi.Location = new System.Drawing.Point(112, 144);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(157, 20);
+            this.txtDiaChi.TabIndex = 23;
             // 
-            // comboBox2
+            // txtTenSinhVien
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(158, 139);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(36, 21);
-            this.comboBox2.TabIndex = 26;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(116, 139);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(36, 21);
-            this.comboBox1.TabIndex = 25;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(442, 144);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 24;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(443, 86);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 23;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(116, 86);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 22;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(116, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 21;
+            this.txtTenSinhVien.Location = new System.Drawing.Point(112, 27);
+            this.txtTenSinhVien.Name = "txtTenSinhVien";
+            this.txtTenSinhVien.Size = new System.Drawing.Size(157, 20);
+            this.txtTenSinhVien.TabIndex = 22;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(397, 147);
+            this.label6.Location = new System.Drawing.Point(35, 185);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.Size = new System.Drawing.Size(25, 13);
             this.label6.TabIndex = 20;
-            this.label6.Text = "Mã lớp";
+            this.label6.Text = "Lớp";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(397, 89);
+            this.label5.Location = new System.Drawing.Point(34, 147);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 19;
@@ -136,7 +95,7 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(397, 35);
+            this.label4.Location = new System.Drawing.Point(34, 107);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 18;
@@ -145,7 +104,7 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 142);
+            this.label3.Location = new System.Drawing.Point(33, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 17;
@@ -154,41 +113,43 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 89);
+            this.label2.Location = new System.Drawing.Point(33, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 16;
             this.label2.Text = "Tên Sinh viên";
             // 
-            // label1
+            // dtpNgaySinh
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Mã Sinh viên";
+            this.dtpNgaySinh.Location = new System.Drawing.Point(112, 65);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(157, 20);
+            this.dtpNgaySinh.TabIndex = 30;
+            // 
+            // cbxLop
+            // 
+            this.cbxLop.FormattingEnabled = true;
+            this.cbxLop.Location = new System.Drawing.Point(112, 182);
+            this.cbxLop.Name = "cbxLop";
+            this.cbxLop.Size = new System.Drawing.Size(157, 21);
+            this.cbxLop.TabIndex = 31;
             // 
             // ThemSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 275);
+            this.ClientSize = new System.Drawing.Size(366, 275);
+            this.Controls.Add(this.cbxLop);
+            this.Controls.Add(this.dtpNgaySinh);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cbxGioiTinh);
+            this.Controls.Add(this.txtDiaChi);
+            this.Controls.Add(this.txtTenSinhVien);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "ThemSinhVien";
             this.Text = "ThemSinhVien";
             this.ResumeLayout(false);
@@ -199,19 +160,15 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
         #endregion
 
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cbxGioiTinh;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.TextBox txtTenSinhVien;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
+        private System.Windows.Forms.ComboBox cbxLop;
     }
 }

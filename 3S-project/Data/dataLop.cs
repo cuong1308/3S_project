@@ -16,7 +16,7 @@ namespace _3S_project.Data
             {
                 var command = new SqlCommand();
                 command.Connection = cnn;
-                string sql = "SELECT MaLop, TenLop FROM Lop where TrangThai = 1";
+                string sql = "SELECT MaLop, TenLop ,KhoaHoc, MaKhoa FROM Lop where TrangThai = 1";
                 command.CommandText = sql;
                 var reader = command.ExecuteReader();
 
@@ -39,6 +39,36 @@ namespace _3S_project.Data
             }
         }
 
+        public List<Lop> getlstLop(string tenLop)
+        {
+            using (SqlConnection cnn = DbUtils.GetConnection())
+            {
+                string tenLop_like = "%" + tenLop +"%";
+                var command = new SqlCommand();
+                command.Connection = cnn;
+                string sql = "SELECT MaLop, TenLop, KhoaHoc, MaKhoa FROM Lop where TrangThai = 1 and TenLop like @TenLop";
+                command.CommandText = sql;
+                command.Parameters.AddWithValue("@TenLop", tenLop_like);
+                var reader = command.ExecuteReader();
+
+                List<Lop> lst = new List<Lop>();
+                while (reader.Read())
+                {
+                    Lop temp = new Lop();
+                    temp.MaLop = reader.GetInt32(0);
+                    temp.TenLop = reader.GetString(1);
+                    temp.KhoaHoc = reader.GetString(2);
+                    dataKhoa dataKhoa = new dataKhoa();
+                    temp.Khoa = dataKhoa.getKhoa(reader.GetInt32(3));
+                    lst.Add(temp);
+                }
+                cnn.Close();
+                return lst;
+
+
+
+            }
+        }
         public Lop getLop(int maLop)
         {
             using (SqlConnection cnn = DbUtils.GetConnection())
@@ -67,8 +97,9 @@ namespace _3S_project.Data
             }
         }
 
-        public int Them(string tenLop, string khoaHoc, int maKhoa)
+        public bool Them(string tenLop, string khoaHoc, int maKhoa)
         {
+            bool result = false;
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
@@ -78,14 +109,15 @@ namespace _3S_project.Data
                 command.Parameters.AddWithValue("@TenLop", tenLop);
                 command.Parameters.AddWithValue("@KhoaHoc", khoaHoc);
                 command.Parameters.AddWithValue("@MaKhoa", maKhoa);
-                var reader = command.ExecuteScalar();
-
-                return 0;
+                result = command.ExecuteNonQuery() > 0;
+                cnn.Close();
             }
+            return result;
         }
 
-        public int Sua(int maLop, string tenLop, string khoaHoc, int maKhoa)
+        public bool Sua(int maLop, string tenLop, string khoaHoc, int maKhoa)
         {
+            bool result = false;
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
@@ -96,14 +128,15 @@ namespace _3S_project.Data
                 command.Parameters.AddWithValue("@TenLop", maLop);
                 command.Parameters.AddWithValue("@KhoaHoc", maLop);
                 command.Parameters.AddWithValue("@MaKhoa", maKhoa);
-                var reader = command.ExecuteScalar();
-
-                return 0;
+                result = command.ExecuteNonQuery() > 0;
+                cnn.Close();
             }
+            return result;
         }
 
-        public int Xoa(int maLop)
+        public bool Xoa(int maLop)
         {
+            bool result = false;
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
@@ -111,10 +144,10 @@ namespace _3S_project.Data
                 string sql = "Update Lop set TrangThai = 0 where MaLop = @MaLop";
                 command.CommandText = sql;
                 command.Parameters.AddWithValue("@MaLop", maLop);
-                var reader = command.ExecuteScalar();
-
-                return 0;
+                result = command.ExecuteNonQuery() > 0;
+                cnn.Close();
             }
+            return result;
         }
     }
 }

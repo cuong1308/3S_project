@@ -35,6 +35,33 @@ namespace _3S_project.Data
 
             }
         }
+        public List<Khoa> getlstKhoa(string tenKhoa)
+        {
+            using (SqlConnection cnn = DbUtils.GetConnection())
+            {
+                string tenKhoa_like = "%" + tenKhoa + "%";
+                var command = new SqlCommand();
+                command.Connection = cnn;
+                string sql = "SELECT MaKhoa, TenKhoa FROM Khoa where TrangThai = 1 and TenKhoa like @TenKhoa";
+                command.CommandText = sql;
+                command.Parameters.AddWithValue("@TenKhoa", tenKhoa_like);
+                var reader = command.ExecuteReader();
+
+                List<Khoa> lst = new List<Khoa>();
+                while (reader.Read())
+                {
+                    Khoa temp = new Khoa();
+                    temp.MaKhoa = reader.GetInt32(0);
+                    temp.TenKhoa = reader.GetString(1);
+                    lst.Add(temp);
+                }
+                cnn.Close();
+                return lst;
+
+
+
+            }
+        }
 
         public Khoa getKhoa(int maKhoa)
         {
@@ -61,8 +88,9 @@ namespace _3S_project.Data
             }
         }
 
-        public int Them(string tenKhoa)
+        public bool Them(string tenKhoa)
         {
+            bool result = false;
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
@@ -70,14 +98,15 @@ namespace _3S_project.Data
                 string sql = "Insert into Khoa(TenKhoa,TrangThai) Values (@TenKhoa,1)";
                 command.CommandText = sql;
                 command.Parameters.AddWithValue("@TenKhoa", tenKhoa);
-                var reader = command.ExecuteScalar();
-
-                return 0;
+                result = command.ExecuteNonQuery() > 0;
+                cnn.Close();
             }
+            return result;
         }
 
-        public int Sua(int maKhoa, string tenKhoa)
+        public bool Sua(int maKhoa, string tenKhoa)
         {
+            bool result = false;
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
@@ -86,14 +115,15 @@ namespace _3S_project.Data
                 command.CommandText = sql;
                 command.Parameters.AddWithValue("@MaKhoa", maKhoa);
                 command.Parameters.AddWithValue("@TenKhoa", tenKhoa);
-                var reader = command.ExecuteScalar();
-
-                return 0;
+                result = command.ExecuteNonQuery() > 0;
+                cnn.Close();
             }
+            return result;
         }
 
-        public int Xoa(int maKhoa)
+        public bool Xoa(int maKhoa)
         {
+            bool result = false;
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
@@ -101,10 +131,10 @@ namespace _3S_project.Data
                 string sql = "Update Khoa set TrangThai = 0 where MaKhoa = @MaKhoa";
                 command.CommandText = sql;
                 command.Parameters.AddWithValue("@MaKhoa", maKhoa);
-                var reader = command.ExecuteScalar();
-
-                return 0;
+                result = command.ExecuteNonQuery() > 0;
+                cnn.Close();
             }
+            return result;
         }
     }
 }

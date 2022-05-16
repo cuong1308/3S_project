@@ -44,12 +44,13 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(543, 131);
+            this.btnXoa.Location = new System.Drawing.Point(574, 114);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 3;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // groupBox1
             // 
@@ -63,6 +64,8 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -73,44 +76,54 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             this.Column6});
             this.dataGridView1.Location = new System.Drawing.Point(1, 21);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(645, 46);
+            this.dataGridView1.Size = new System.Drawing.Size(657, 59);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView4_CellFormatting);
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "MaSinhVien";
             this.Column1.HeaderText = "Mã Sinh viên";
             this.Column1.Name = "Column1";
+            this.Column1.Width = 95;
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "TenSinhVien";
             this.Column2.HeaderText = "Tên Sinh Viên";
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
+            this.Column3.DataPropertyName = "DateTime";
             this.Column3.HeaderText = "Ngày Sinh";
             this.Column3.Name = "Column3";
             // 
             // Column4
             // 
+            this.Column4.DataPropertyName = "GioiTinh";
             this.Column4.HeaderText = "Giới Tính";
             this.Column4.Name = "Column4";
+            this.Column4.Width = 75;
             // 
             // Column5
             // 
+            this.Column5.DataPropertyName = "DiaChi";
             this.Column5.HeaderText = "Địa Chỉ";
             this.Column5.Name = "Column5";
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "Mã Lớp";
+            this.Column6.DataPropertyName = "TenLop";
+            this.Column6.HeaderText = "Tên lớp";
             this.Column6.Name = "Column6";
+            this.Column6.Width = 135;
             // 
             // XoaSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 167);
+            this.ClientSize = new System.Drawing.Size(675, 149);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.groupBox1);
             this.Name = "XoaSV";

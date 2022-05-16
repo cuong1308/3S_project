@@ -55,6 +55,18 @@
     <Compile Include="Data\dataSinhVien.cs" />
     <Compile Include="Data\DbUtils.cs" />
     <Compile Include="Data\TaiKhoan.cs" />
+    <Compile Include="GUI\FormAdmin\FormDiem\NhapDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormDiem\NhapDiem.Designer.cs">
+      <DependentUpon>NhapDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormDiem\QuanLyDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormDiem\QuanLyDiem.Designer.cs">
+      <DependentUpon>QuanLyDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormAdmin\FormMonHoc\QuanLyMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +102,12 @@
     </Compile>
     <Compile Include="GUI\FormAdmin\FormQuanLyKhoa\FormKhoaSua.Designer.cs">
       <DependentUpon>FormKhoaSua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyKhoa\FormKhoaXoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyKhoa\FormKhoaXoa.Designer.cs">
+      <DependentUpon>FormKhoaXoa.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormAdmin\FormQuanLyKhoa\FormQuanLyKhoa.cs">
       <SubType>Form</SubType>
@@ -263,6 +281,12 @@
     <Compile Include="GUI\Model\TaiKhoan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\FormAdmin\FormDiem\NhapDiem.resx">
+      <DependentUpon>NhapDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormDiem\QuanLyDiem.resx">
+      <DependentUpon>QuanLyDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAdmin\FormMonHoc\QuanLyMonHoc.resx">
       <DependentUpon>QuanLyMonHoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyKhoa\FormKhoaSua.resx">
       <DependentUpon>FormKhoaSua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyKhoa\FormKhoaXoa.resx">
+      <DependentUpon>FormKhoaXoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyKhoa\FormQuanLyKhoa.resx">
       <DependentUpon>FormQuanLyKhoa.cs</DependentUpon>
