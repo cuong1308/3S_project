@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _3S_project.Model;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -59,16 +60,16 @@ namespace _3S_project.Data
                 string user_like = "%" + user + "%";
                 var command = new SqlCommand();
                 command.Connection = cnn;
-                string sql = "SELECT TenUser, MatKhau, Quyen, MaGiangVien, Email, TrangThai FROM TaiKhoan where TenUser = @TenUser and TrangThai = 1";
+                string sql = "SELECT TenUser, MatKhau, Quyen, MaGiangVien, Email, TrangThai FROM TaiKhoan where TenUser like @TenUser ";
                 command.CommandText = sql;
                 command.Parameters.AddWithValue("@TenUser", user_like);
                 var reader = command.ExecuteReader();
                 List<Model.TaiKhoan> lst = new List<Model.TaiKhoan>();
                 if (reader.HasRows)
                 {
-                    Model.TaiKhoan temp = new Model.TaiKhoan();
                     while (reader.Read())
                     {
+                        Model.TaiKhoan temp = new Model.TaiKhoan();
                         temp.TenUser = reader.GetString(0);
                         temp.MatKhau = reader.GetString(1);
                         temp.Quyen = reader.GetInt32(2);
@@ -80,10 +81,14 @@ namespace _3S_project.Data
                             dataGiangVien dataGiangVien = new dataGiangVien();
                             temp.GiangVien = dataGiangVien.getGiangVien(reader.GetInt32(3));
                         }
+                        else
+                        {
+                            temp.GiangVien = new GiangVien();
+                        }
+                        lst.Add(temp);
 
                     }
                     
-                    lst.Add(temp);
                 }
                 else
                 {
@@ -100,23 +105,32 @@ namespace _3S_project.Data
 
         public bool Them(string un,string maGiangVien ,int quyen , string pass, string email)
         {
-            bool result = false;
-            using (SqlConnection cnn = DbUtils.GetConnection())
+            try
             {
-                var command = new SqlCommand();
-                command.Connection = cnn;
-                string sql = "Insert into TaiKhoan(TenUser,MatKhau,Quyen,MaGiangVien, Email, TrangThai) Values (@TenUser,@MatKhau,@Quyen,@MaGiangVien, @Email, @TrangThai)";
-                command.CommandText = sql;
-                command.Parameters.AddWithValue("@TenUser", un);
-                command.Parameters.AddWithValue("@MatKhau", pass);
-                command.Parameters.AddWithValue("@Quyen", quyen);
-                command.Parameters.AddWithValue("@MaGiangVien", maGiangVien);
-                command.Parameters.AddWithValue("@Email", email);
-                command.Parameters.AddWithValue("@TrangThai", 1);
-                result = command.ExecuteNonQuery() > 0;
-                cnn.Close();
+                bool result = false;
+                using (SqlConnection cnn = DbUtils.GetConnection())
+                {
+                    var command = new SqlCommand();
+                    command.Connection = cnn;
+                    string sql = "Insert into TaiKhoan(TenUser,MatKhau,Quyen,MaGiangVien, Email, TrangThai) Values (@TenUser,@MatKhau,@Quyen,@MaGiangVien, @Email, @TrangThai)";
+                    command.CommandText = sql;
+                    command.Parameters.AddWithValue("@TenUser", un);
+                    command.Parameters.AddWithValue("@MatKhau", pass);
+                    command.Parameters.AddWithValue("@Quyen", quyen);
+                    command.Parameters.AddWithValue("@MaGiangVien", maGiangVien);
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.Parameters.AddWithValue("@TrangThai", 1);
+                    result = command.ExecuteNonQuery() > 0;
+                    cnn.Close();
+                }
+                return result;
+
             }
-            return result;
+            catch(Exception ex)
+            {
+                
+            }
+            return false;
         }
 
         public bool Sua(string un, string maGiangVien, int quyen, string pass, string email)
@@ -146,7 +160,7 @@ namespace _3S_project.Data
             {
                 var command = new SqlCommand();
                 command.Connection = cnn;
-                string sql = "Update TrangThai = @TrangThai where TenUser = @TenUser";
+                string sql = "Update TaiKhoan set TrangThai = @TrangThai where TenUser = @TenUser";
                 command.CommandText = sql;
                 command.Parameters.AddWithValue("@TenUser", un);
                 command.Parameters.AddWithValue("@TrangThai", !trangThai);
@@ -155,7 +169,20 @@ namespace _3S_project.Data
             }
             return result;
         }
-
+        public int DoiMatKhau(string un, string passnew)
+        {
+            using (SqlConnection cnn = DbUtils.GetConnection())
+            {
+                var command = new SqlCommand();
+                command.Connection = cnn;
+                string sql = "Update TaiKhoan set MatKhau = @MatKhau where TenUser = @TenUser";
+                command.CommandText = sql;
+                command.Parameters.AddWithValue("@TenUser", un);
+                command.Parameters.AddWithValue("@MatKhau", passnew);
+                var reader = command.ExecuteScalar();
+                return 0;
+            }
+        }
 
 
     }

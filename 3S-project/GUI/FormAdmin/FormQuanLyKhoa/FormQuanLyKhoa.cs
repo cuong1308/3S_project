@@ -49,6 +49,7 @@ namespace _3S_project.GUI.FormAdmin.FormQuanLyKhoa
                 // 2. Thực hiện xoá bizSach.Xoa(sach)
                 FormKhoaXoa formKhoaXoa = new FormKhoaXoa(khoa);
 
+                formKhoaXoa.ShowDialog();
                 FormQuanLyKhoa_Load();
 
                 

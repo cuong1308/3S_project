@@ -31,21 +31,24 @@ namespace _3S_project.GUI
             else if (tk.Quyen==1)
             {
                 FormMainAdmin form1 = new FormMainAdmin(tk);
+                this.Hide();
                 form1.ShowDialog();
             }
             else if (tk.Quyen == 2)
             {
                 FormMain.FormMainQuanLy form2 = new FormMain.FormMainQuanLy(tk);
+                this.Hide();
                 form2.ShowDialog();
             }
             else if (tk.Quyen == 3)
             {
                 FormMain.FormMainGiangVien form3 = new FormMain.FormMainGiangVien(tk);
+                this.Hide();
                 form3.ShowDialog();
             }
             else
                 MessageBox.Show("Nhập sai vui lòng thử lại");
-
+            this.Show();
 
         }
 

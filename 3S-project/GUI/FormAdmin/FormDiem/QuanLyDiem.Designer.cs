@@ -36,11 +36,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.txtTenSinhVien = new System.Windows.Forms.TextBox();
             this.gridQuanLyBanDiem = new System.Windows.Forms.DataGridView();
-            this.button20 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.bsQuanLyDiem = new System.Windows.Forms.BindingSource(this.components);
             this.maSinhVien1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenSinhVien1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenLop2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,8 +46,11 @@
             this.diemKiemTra3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diemThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nhap = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button20 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.bsQuanLyDiem = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridQuanLyBanDiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsQuanLyDiem)).BeginInit();
             this.SuspendLayout();
@@ -109,6 +107,8 @@
             // 
             // gridQuanLyBanDiem
             // 
+            this.gridQuanLyBanDiem.AllowUserToAddRows = false;
+            this.gridQuanLyBanDiem.AllowUserToDeleteRows = false;
             this.gridQuanLyBanDiem.BackgroundColor = System.Drawing.SystemColors.Control;
             this.gridQuanLyBanDiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridQuanLyBanDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -122,51 +122,12 @@
             this.diemKiemTra2,
             this.diemKiemTra3,
             this.diemThi,
-            this.nhap,
-            this.Sua,
-            this.Xoa});
+            this.nhap});
             this.gridQuanLyBanDiem.Location = new System.Drawing.Point(12, 149);
             this.gridQuanLyBanDiem.Name = "gridQuanLyBanDiem";
             this.gridQuanLyBanDiem.Size = new System.Drawing.Size(766, 289);
             this.gridQuanLyBanDiem.TabIndex = 44;
             this.gridQuanLyBanDiem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridQuanLyBanDiem_CellContentClick);
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(661, 105);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 23);
-            this.button20.TabIndex = 43;
-            this.button20.Text = "Tìm kiếm";
-            this.button20.UseVisualStyleBackColor = true;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(48, 70);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(74, 13);
-            this.label14.TabIndex = 42;
-            this.label14.Text = "Tên sinh viên:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(324, 30);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(176, 25);
-            this.label15.TabIndex = 41;
-            this.label15.Text = "Quản lý bảng điểm";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(48, 105);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(70, 13);
-            this.label17.TabIndex = 51;
-            this.label17.Text = "Mã sinh viên:";
             // 
             // maSinhVien1
             // 
@@ -231,23 +192,42 @@
             this.nhap.UseColumnTextForButtonValue = true;
             this.nhap.Width = 50;
             // 
-            // Sua
+            // button20
             // 
-            this.Sua.DataPropertyName = "Sua";
-            this.Sua.HeaderText = "Sửa";
-            this.Sua.Name = "Sua";
-            this.Sua.Text = "Sửa";
-            this.Sua.UseColumnTextForButtonValue = true;
-            this.Sua.Width = 50;
+            this.button20.Location = new System.Drawing.Point(661, 105);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(75, 23);
+            this.button20.TabIndex = 43;
+            this.button20.Text = "Tìm kiếm";
+            this.button20.UseVisualStyleBackColor = true;
             // 
-            // Xoa
+            // label14
             // 
-            this.Xoa.DataPropertyName = "Xoa";
-            this.Xoa.HeaderText = "Xoá";
-            this.Xoa.Name = "Xoa";
-            this.Xoa.Text = "Xoá";
-            this.Xoa.UseColumnTextForButtonValue = true;
-            this.Xoa.Width = 50;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(48, 70);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(74, 13);
+            this.label14.TabIndex = 42;
+            this.label14.Text = "Tên sinh viên:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(324, 30);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(176, 25);
+            this.label15.TabIndex = 41;
+            this.label15.Text = "Quản lý bảng điểm";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(48, 105);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 13);
+            this.label17.TabIndex = 51;
+            this.label17.Text = "Mã sinh viên:";
             // 
             // QuanLyDiem
             // 
@@ -298,7 +278,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn diemKiemTra3;
         private System.Windows.Forms.DataGridViewTextBoxColumn diemThi;
         private System.Windows.Forms.DataGridViewButtonColumn nhap;
-        private System.Windows.Forms.DataGridViewButtonColumn Sua;
-        private System.Windows.Forms.DataGridViewButtonColumn Xoa;
     }
 }

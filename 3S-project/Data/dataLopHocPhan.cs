@@ -48,7 +48,7 @@ namespace _3S_project.Data
                 string tenLopHocPhan_like = "%" + tenLopHocPhan + "%";
                 var command = new SqlCommand();
                 command.Connection = cnn;
-                string sql = "SELECT MaLopHocPhan, TenLopHocPhan,HocKi, NamHoc, MaMonHoc, MaGiangVien FROM LopHocPhan where TrangThai = 1 and TenLopHocPhan like @TenLopHocPhan";
+                string sql = "SELECT MaLopHocPhan, TenLopHocPhan,HocKi, NamHoc, MaMonHoc, MaGiangVien FROM LopHocPhan where TrangThai = 1 and TenLopHocPhan like @TenLopHocPhan or MaLopHocPhan like @TenLopHocPhan";
                 command.CommandText = sql;
                 command.Parameters.AddWithValue("@TenLopHocPhan", tenLopHocPhan_like);
                 var reader = command.ExecuteReader();

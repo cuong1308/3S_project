@@ -32,12 +32,6 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             this.components = new System.ComponentModel.Container();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.bsQuanLySinhVien = new System.Windows.Forms.BindingSource(this.components);
             this.maSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenSinhVIen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +40,12 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             this.tenLop1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.bsQuanLySinhVien = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsQuanLySinhVien)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,8 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             // 
             // dataGridView4
             // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
             this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -78,53 +80,6 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             this.dataGridView4.TabIndex = 34;
             this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             this.dataGridView4.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView4_CellFormatting);
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(80, 144);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(169, 30);
-            this.button12.TabIndex = 33;
-            this.button12.Text = "Thêm mới sinh viên";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(380, 100);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(93, 30);
-            this.button13.TabIndex = 32;
-            this.button13.Text = "Tìm kiếm";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(22, 109);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 13);
-            this.label8.TabIndex = 31;
-            this.label8.Text = "Tìm kiếm:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(338, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 25);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Quản lý sinh viên";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(277, 65);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 25);
-            this.label9.TabIndex = 29;
             // 
             // maSinhVien
             // 
@@ -180,6 +135,53 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             this.Xoa.Text = "Xoá";
             this.Xoa.UseColumnTextForButtonValue = true;
             this.Xoa.Width = 75;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(80, 144);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(169, 30);
+            this.button12.TabIndex = 33;
+            this.button12.Text = "Thêm mới sinh viên";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(380, 100);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(93, 30);
+            this.button13.TabIndex = 32;
+            this.button13.Text = "Tìm kiếm";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(22, 109);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 13);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Tìm kiếm:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(338, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 25);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Quản lý sinh viên";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(277, 65);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(0, 25);
+            this.label9.TabIndex = 29;
             // 
             // frmQuanLySinhVien
             // 

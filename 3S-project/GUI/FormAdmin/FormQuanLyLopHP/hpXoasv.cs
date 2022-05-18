@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _3S_project.GUI.FormQuanLyLopHP
 {
-    public partial class hpXoasv : Form
+    public partial class frmXoaSvHP : Form
     {
-        public hpXoasv()
+        public frmXoaSvHP()
         {
             InitializeComponent();
         }

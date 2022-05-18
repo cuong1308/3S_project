@@ -14,5 +14,7 @@ namespace _3S_project.Model
         public string NamHoc { get; set; }
         public MonHoc MonHoc { get; set; }
         public GiangVien GiangVien { get; set; }
+        public string TenMonHoc { get {return MonHoc.TenMonHoc; } }
+        public string TenGiangVien { get { return GiangVien.TenGiangVien; } }
     }
 }

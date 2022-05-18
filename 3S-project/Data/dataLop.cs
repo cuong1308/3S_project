@@ -122,11 +122,11 @@ namespace _3S_project.Data
             {
                 var command = new SqlCommand();
                 command.Connection = cnn;
-                string sql = "Update Lop set TenLop = @TenKhoa, KhoaHoc = @KhoaHoc, MaKhoa = @MaKhoa where MaLop = @MaLop";
+                string sql = "Update Lop set TenLop = @TenLop, KhoaHoc = @KhoaHoc, MaKhoa = @MaKhoa where MaLop = @MaLop";
                 command.CommandText = sql;
                 command.Parameters.AddWithValue("@MaLop", maLop);
-                command.Parameters.AddWithValue("@TenLop", maLop);
-                command.Parameters.AddWithValue("@KhoaHoc", maLop);
+                command.Parameters.AddWithValue("@TenLop", tenLop);
+                command.Parameters.AddWithValue("@KhoaHoc", khoaHoc);
                 command.Parameters.AddWithValue("@MaKhoa", maKhoa);
                 result = command.ExecuteNonQuery() > 0;
                 cnn.Close();

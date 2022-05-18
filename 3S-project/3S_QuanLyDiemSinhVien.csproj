@@ -55,6 +55,12 @@
     <Compile Include="Data\dataSinhVien.cs" />
     <Compile Include="Data\DbUtils.cs" />
     <Compile Include="Data\TaiKhoan.cs" />
+    <Compile Include="GUI\DoiMatKhau\FormDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DoiMatKhau\FormDoiMatKhau.designer.cs">
+      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormAdmin\FormDiem\NhapDiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,12 +121,6 @@
     <Compile Include="GUI\FormAdmin\FormQuanLyKhoa\FormQuanLyKhoa.Designer.cs">
       <DependentUpon>FormQuanLyKhoa.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FormAdmin\FormQuanLyLop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\FormAdmin\FormQuanLyLop.Designer.cs">
-      <DependentUpon>FormQuanLyLop.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\FormAdmin\FormQuanLyLopHP\hpsuasv.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,11 +157,23 @@
     <Compile Include="GUI\FormAdmin\FormQuanLyLopHP\QLLHP_sua.Designer.cs">
       <DependentUpon>QLLHP_sua.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyLopHP\QLLHP_xoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyLopHP\QLLHP_xoa.Designer.cs">
+      <DependentUpon>QLLHP_xoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormAdmin\FormQuanLyLopHP\QuanLyLopHocPhan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\FormAdmin\FormQuanLyLopHP\QuanLyLopHocPhan.Designer.cs">
       <DependentUpon>QuanLyLopHocPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyLop\QLLQLSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyLop\QLLQLSV.Designer.cs">
+      <DependentUpon>QLLQLSV.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormAdmin\FormQuanLyLop\QLLsua.cs">
       <SubType>Form</SubType>
@@ -180,6 +192,30 @@
     </Compile>
     <Compile Include="GUI\FormAdmin\FormQuanLyLop\QLL_QLSV.Designer.cs">
       <DependentUpon>QLL_QLSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyLop\QLL_QLSVsua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyLop\QLL_QLSVsua.Designer.cs">
+      <DependentUpon>QLL_QLSVsua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyLop\QLL_QLSVthem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyLop\QLL_QLSVthem.Designer.cs">
+      <DependentUpon>QLL_QLSVthem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyLop\QLL_QLSVxoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyLop\QLL_QLSVxoa.Designer.cs">
+      <DependentUpon>QLL_QLSVxoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyLop\QLL_xoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyLop\QLL_xoa.Designer.cs">
+      <DependentUpon>QLL_xoa.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormAdmin\FormQuanLyLop\Quanlylop.cs">
       <SubType>Form</SubType>
@@ -205,6 +241,30 @@
     <Compile Include="GUI\FormAdmin\FormQuanLyLop\Xoasv.Designer.cs">
       <DependentUpon>Xoasv.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyTaiKhoan\PhanQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyTaiKhoan\PhanQuyen.Designer.cs">
+      <DependentUpon>PhanQuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyTaiKhoan\QuanLyTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyTaiKhoan\QuanLyTaiKhoan.Designer.cs">
+      <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyTaiKhoan\SuaTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyTaiKhoan\SuaTaiKhoan.Designer.cs">
+      <DependentUpon>SuaTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyTaiKhoan\ThemTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyTaiKhoan\ThemTaiKhoan.Designer.cs">
+      <DependentUpon>ThemTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormAdmin\FormSinhVien\QuanLySinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +288,48 @@
     </Compile>
     <Compile Include="GUI\FormAdmin\FormSinhVien\XoaSV.Designer.cs">
       <DependentUpon>XoaSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormThongKe\ThongKeLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormThongKe\ThongKeLop.Designer.cs">
+      <DependentUpon>ThongKeLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormThongKe\ThongKeMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormThongKe\ThongKeMonHoc.Designer.cs">
+      <DependentUpon>ThongKeMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormThongKe\ThongKeTrungBinhMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormThongKe\ThongKeTrungBinhMon.Designer.cs">
+      <DependentUpon>ThongKeTrungBinhMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormGiangVien\FormGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormGiangVien\FormGV.designer.cs">
+      <DependentUpon>FormGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormGiangVien\FormSuaGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormGiangVien\FormSuaGV.designer.cs">
+      <DependentUpon>FormSuaGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormGiangVien\FormThemGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormGiangVien\FormThemGV.designer.cs">
+      <DependentUpon>FormThemGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormGiangVien\FormXoaGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormGiangVien\FormXoaGV.designer.cs">
+      <DependentUpon>FormXoaGV.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormLogin.cs">
       <SubType>Form</SubType>
@@ -281,6 +383,9 @@
     <Compile Include="GUI\Model\TaiKhoan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\DoiMatKhau\FormDoiMatKhau.resx">
+      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAdmin\FormDiem\NhapDiem.resx">
       <DependentUpon>NhapDiem.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,8 +434,14 @@
     <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLopHP\QLLHP_sua.resx">
       <DependentUpon>QLLHP_sua.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLopHP\QLLHP_xoa.resx">
+      <DependentUpon>QLLHP_xoa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLopHP\QuanLyLopHocPhan.resx">
       <DependentUpon>QuanLyLopHocPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLop\QLLQLSV.resx">
+      <DependentUpon>QLLQLSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLop\QLLsua.resx">
       <DependentUpon>QLLsua.cs</DependentUpon>
@@ -340,6 +451,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLop\QLL_QLSV.resx">
       <DependentUpon>QLL_QLSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLop\QLL_QLSVsua.resx">
+      <DependentUpon>QLL_QLSVsua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLop\QLL_QLSVthem.resx">
+      <DependentUpon>QLL_QLSVthem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLop\QLL_QLSVxoa.resx">
+      <DependentUpon>QLL_QLSVxoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLop\QLL_xoa.resx">
+      <DependentUpon>QLL_xoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLop\Quanlylop.resx">
       <DependentUpon>Quanlylop.cs</DependentUpon>
@@ -353,6 +476,15 @@
     <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLop\Xoasv.resx">
       <DependentUpon>Xoasv.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyTaiKhoan\QuanLyTaiKhoan.resx">
+      <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyTaiKhoan\SuaTaiKhoan.resx">
+      <DependentUpon>SuaTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyTaiKhoan\ThemTaiKhoan.resx">
+      <DependentUpon>ThemTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAdmin\FormSinhVien\QuanLySinhVien.resx">
       <DependentUpon>QuanLySinhVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -364,6 +496,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAdmin\FormSinhVien\XoaSV.resx">
       <DependentUpon>XoaSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormThongKe\ThongKeLop.resx">
+      <DependentUpon>ThongKeLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormThongKe\ThongKeMonHoc.resx">
+      <DependentUpon>ThongKeMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormThongKe\ThongKeTrungBinhMon.resx">
+      <DependentUpon>ThongKeTrungBinhMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormGiangVien\FormGV.resx">
+      <DependentUpon>FormGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormGiangVien\FormSuaGV.resx">
+      <DependentUpon>FormSuaGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormGiangVien\FormThemGV.resx">
+      <DependentUpon>FormThemGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormGiangVien\FormXoaGV.resx">
+      <DependentUpon>FormXoaGV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -414,7 +567,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GUI\FormGiangVien\" />
     <Folder Include="GUI\FormQuanLy\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

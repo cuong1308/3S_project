@@ -32,7 +32,7 @@ namespace _3S_project.GUI.FormAdmin.FormDiem
         private void gridQuanLyBanDiem_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            if (gridQuanLyBanDiem.Columns[e.ColumnIndex].Name == "Nhap")
+            if (gridQuanLyBanDiem.Columns[e.ColumnIndex].Name == "nhap")
             {
                 DataGridViewRow selectedRow = gridQuanLyBanDiem.Rows[e.RowIndex];
                 Diem diem = (Diem)selectedRow.DataBoundItem;

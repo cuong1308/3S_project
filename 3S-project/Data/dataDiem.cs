@@ -1,6 +1,7 @@
 ﻿using _3S_project.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -26,7 +27,7 @@ namespace _3S_project.Data
                                     join SinhVien as sv on d.MaSinhVien = sv.MaSinhVien
                                     join LopHocPhan as lhp on d.MaLopHocPhan = lhp.MaLopHocPhan
                                     join MonHoc as mh on mh.MaMonHoc = lhp.MaMonHoc
-                                where d.TrangThai = 1 and TenLopHocPhan like @TenLopHocPhan and TenSinhVien like @TenSinhVien and mh.TenMonHoc like @TenLop and sv.MaSinhVien like @MaSinhVien";
+                                where d.TrangThai = 1 and sv.TrangThai = 1 and lhp.TrangThai = 1 and TenLopHocPhan like @TenLopHocPhan and TenSinhVien like @TenSinhVien and mh.TenMonHoc like @TenLop and sv.MaSinhVien like @MaSinhVien";
                 command.CommandText = sql;
                 command.Parameters.AddWithValue("@MaSinhVien", maSinhVien_like);
                 command.Parameters.AddWithValue("@TenLopHocPhan", tenLopHocPhan_like);
@@ -154,5 +155,58 @@ namespace _3S_project.Data
             }
             return result;
         }
+        public DataTable tkTBM(string x, string y)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection cnn = DbUtils.GetConnection();
+            string Sql = @"  select dtb.MaSinhVien,dtb.TenSinhVien,dtb.TenLop,dtb.TenKhoa,Round(AVG(dtb.DiemTBM),2) as DiemTrungBinh
+                             from (
+	                                Select sv.MaSinhVien,sv.TenSinhVien,l.TenLop,k.TenKhoa, (d.DiemChuyenCan*0.1 + d.DiemKiemTra1*0.1 + d.DiemKiemTra2*0.1 + d.DiemKiemTra3*0.1 + d.DiemThi*0.6 ) as DiemTBM
+	                                from Diem as d
+	                                	join SinhVien as sv on sv.MaSinhVien = d.MaSinhVien
+	                                	join Lop as l on l.MaLop = sv.MaLop
+	                                	join Khoa as k on l.MaKhoa = k.MaKhoa) as dtb
+                             group by dtb.MaSinhVien,dtb.TenSinhVien,dtb.TenLop,dtb.TenKhoa
+                             having AVG(dtb.DiemTBM) > " + x + "and AVG(dtb.DiemTBM) < " + y;
+            SqlDataAdapter ds = new SqlDataAdapter(Sql, cnn);
+            ds.Fill(dt);
+            cnn.Close();
+            return dt;
+        }
+        public DataTable tkLop(string x, string y,int maLopHocPhan)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection cnn = DbUtils.GetConnection();
+            string Sql = @"     Select sv.MaSinhVien,sv.TenSinhVien, Round((d.DiemChuyenCan*0.25 + d.DiemKiemTra1*0.25 + d.DiemKiemTra2*0.25 + d.DiemKiemTra3*0.25),2) as DiemThanhPhan,d.DiemThi,Round((d.DiemChuyenCan*0.1 + d.DiemKiemTra1*0.1 + d.DiemKiemTra2*0.1 + d.DiemKiemTra3*0.1 + d.DiemThi*0.6),2) as DiemTongKet
+                                from Diem as d
+	                                join SinhVien as sv on sv.MaSinhVien = d.MaSinhVien
+                                where d.MaLopHocPhan = " + maLopHocPhan 
+                                + @"and (d.DiemChuyenCan*0.1 + d.DiemKiemTra1*0.1 + d.DiemKiemTra2*0.1 + d.DiemKiemTra3*0.1 + d.DiemThi*0.6) > " + x + 
+                                @" and (d.DiemChuyenCan*0.1 + d.DiemKiemTra1*0.1 + d.DiemKiemTra2*0.1 + d.DiemKiemTra3*0.1 + d.DiemThi*0.6) < " + y;
+            SqlDataAdapter ds = new SqlDataAdapter(Sql, cnn);
+            ds.Fill(dt);
+            cnn.Close();
+            return dt;
+        }
+
+        public DataTable tkMonHoc(string x, string y, int monHoc)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection cnn = DbUtils.GetConnection();
+            string Sql = @"     Select sv.MaSinhVien,sv.TenSinhVien,l.TenLop,lhp.TenLopHocPhan , Round((d.DiemChuyenCan*0.25 + d.DiemKiemTra1*0.25 + d.DiemKiemTra2*0.25 + d.DiemKiemTra3*0.25),2) as DiemThanhPhan,d.DiemThi,Round((d.DiemChuyenCan*0.1 + d.DiemKiemTra1*0.1 + d.DiemKiemTra2*0.1 + d.DiemKiemTra3*0.1 + d.DiemThi*0.6),2) as DiemTongKet
+                                from Diem as d
+	                                join SinhVien as sv on sv.MaSinhVien = d.MaSinhVien
+									join Lop as l on sv.MaLop = l.MaLop	
+									join LopHocPhan as lhp on d.MaLopHocPhan = lhp.MaLopHocPhan
+                                where lhp.MaMonHoc = " + monHoc + @"
+                                and (d.DiemChuyenCan*0.1 + d.DiemKiemTra1*0.1 + d.DiemKiemTra2*0.1 + d.DiemKiemTra3*0.1 + d.DiemThi*0.6) >" + x + @"
+                                and (d.DiemChuyenCan*0.1 + d.DiemKiemTra1*0.1 + d.DiemKiemTra2*0.1 + d.DiemKiemTra3*0.1 + d.DiemThi*0.6) < " + y;
+            SqlDataAdapter ds = new SqlDataAdapter(Sql, cnn);
+            ds.Fill(dt);
+            cnn.Close();
+            return dt;
+        }
+
+
     }
 }

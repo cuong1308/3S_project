@@ -27,17 +27,25 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             var lstLop = dataLop.getlstLop();
             cbxLop.DataSource = lstLop;
             cbxLop.DisplayMember = "TenLop";
-            int count = 0;
-            foreach(Lop l in lstLop)
+            if(sinhVien.TenLop == null)
             {
-                if (sinhVien.Lop.MaLop == l.MaLop)
+                cbxLop.SelectedIndex = 0;
+            }
+            else
+            {
+                int count = 0;
+                foreach (Lop l in lstLop)
                 {
-                    break;
+                    if (sinhVien.Lop.MaLop == l.MaLop)
+                    {
+                        break;
+                    }
+
+                    else
+                        count++;
+
                 }
-
-                else
-                    count++;
-
+                cbxLop.SelectedIndex = count;
             }
 
             txtTenSinhVien.Text = sinhVien.TenSinhVien;
@@ -47,7 +55,7 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             else
                 cbxGioiTinh.SelectedIndex = 0;
             txtDiaChi.Text = sinhVien.DiaChi;
-            cbxLop.SelectedIndex = count;
+            
         }
 
         private void btnThem_Click(object sender, EventArgs e)

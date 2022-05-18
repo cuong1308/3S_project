@@ -29,121 +29,113 @@ namespace _3S_project.GUI.FormQuanLyLop
         /// </summary>
         private void InitializeComponent()
         {
+            this.cbxKhoa = new System.Windows.Forms.ComboBox();
             this.dongy = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tenkhoa = new System.Windows.Forms.Label();
             this.khoahoc = new System.Windows.Forms.Label();
-            this.malop = new System.Windows.Forms.Label();
             this.tenlop = new System.Windows.Forms.Label();
             this.themlophoc = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
+            // cbxKhoa
+            // 
+            this.cbxKhoa.FormattingEnabled = true;
+            this.cbxKhoa.Location = new System.Drawing.Point(103, 140);
+            this.cbxKhoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxKhoa.Name = "cbxKhoa";
+            this.cbxKhoa.Size = new System.Drawing.Size(207, 21);
+            this.cbxKhoa.TabIndex = 40;
+            this.cbxKhoa.SelectedIndexChanged += new System.EventHandler(this.cbxKhoa_SelectedIndexChanged);
+            // 
             // dongy
             // 
-            this.dongy.Location = new System.Drawing.Point(403, 357);
+            this.dongy.Location = new System.Drawing.Point(226, 189);
+            this.dongy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dongy.Name = "dongy";
-            this.dongy.Size = new System.Drawing.Size(126, 44);
-            this.dongy.TabIndex = 31;
+            this.dongy.Size = new System.Drawing.Size(84, 28);
+            this.dongy.TabIndex = 39;
             this.dongy.Text = "Đồng ý";
             this.dongy.UseVisualStyleBackColor = true;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(227, 279);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(276, 26);
-            this.textBox4.TabIndex = 30;
+            this.dongy.Click += new System.EventHandler(this.dongy_Click);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(227, 218);
+            this.textBox3.Location = new System.Drawing.Point(103, 108);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(276, 26);
-            this.textBox3.TabIndex = 29;
+            this.textBox3.Size = new System.Drawing.Size(207, 20);
+            this.textBox3.TabIndex = 38;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(227, 161);
+            this.textBox2.Location = new System.Drawing.Point(103, 77);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(276, 26);
-            this.textBox2.TabIndex = 28;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(227, 111);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(276, 26);
-            this.textBox1.TabIndex = 27;
+            this.textBox2.Size = new System.Drawing.Size(207, 20);
+            this.textBox2.TabIndex = 37;
             // 
             // tenkhoa
             // 
             this.tenkhoa.AutoSize = true;
-            this.tenkhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tenkhoa.Location = new System.Drawing.Point(86, 280);
+            this.tenkhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tenkhoa.Location = new System.Drawing.Point(30, 143);
+            this.tenkhoa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tenkhoa.Name = "tenkhoa";
-            this.tenkhoa.Size = new System.Drawing.Size(114, 25);
-            this.tenkhoa.TabIndex = 26;
-            this.tenkhoa.Text = "Tên Khoa:";
+            this.tenkhoa.Size = new System.Drawing.Size(35, 13);
+            this.tenkhoa.TabIndex = 36;
+            this.tenkhoa.Text = "Khoa:";
             // 
             // khoahoc
             // 
             this.khoahoc.AutoSize = true;
-            this.khoahoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.khoahoc.Location = new System.Drawing.Point(86, 219);
+            this.khoahoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.khoahoc.Location = new System.Drawing.Point(30, 111);
+            this.khoahoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.khoahoc.Name = "khoahoc";
-            this.khoahoc.Size = new System.Drawing.Size(114, 25);
-            this.khoahoc.TabIndex = 25;
+            this.khoahoc.Size = new System.Drawing.Size(58, 13);
+            this.khoahoc.TabIndex = 35;
             this.khoahoc.Text = "Khóa Học:";
-            // 
-            // malop
-            // 
-            this.malop.AutoSize = true;
-            this.malop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.malop.Location = new System.Drawing.Point(86, 112);
-            this.malop.Name = "malop";
-            this.malop.Size = new System.Drawing.Size(91, 25);
-            this.malop.TabIndex = 24;
-            this.malop.Text = "Mã Lớp:";
             // 
             // tenlop
             // 
             this.tenlop.AutoSize = true;
-            this.tenlop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tenlop.Location = new System.Drawing.Point(86, 162);
+            this.tenlop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tenlop.Location = new System.Drawing.Point(30, 77);
+            this.tenlop.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tenlop.Name = "tenlop";
-            this.tenlop.Size = new System.Drawing.Size(99, 25);
-            this.tenlop.TabIndex = 23;
+            this.tenlop.Size = new System.Drawing.Size(50, 13);
+            this.tenlop.TabIndex = 34;
             this.tenlop.Text = "Tên Lớp:";
             // 
             // themlophoc
             // 
-            this.themlophoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.themlophoc.Location = new System.Drawing.Point(207, 24);
+            this.themlophoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.themlophoc.Location = new System.Drawing.Point(28, 27);
+            this.themlophoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.themlophoc.Name = "themlophoc";
-            this.themlophoc.Size = new System.Drawing.Size(279, 43);
-            this.themlophoc.TabIndex = 22;
+            this.themlophoc.Size = new System.Drawing.Size(186, 28);
+            this.themlophoc.TabIndex = 33;
             this.themlophoc.Text = "Thêm Lớp Học";
             // 
             // QLLthem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 450);
+            this.ClientSize = new System.Drawing.Size(340, 238);
+            this.Controls.Add(this.cbxKhoa);
             this.Controls.Add(this.dongy);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.tenkhoa);
             this.Controls.Add(this.khoahoc);
-            this.Controls.Add(this.malop);
             this.Controls.Add(this.tenlop);
             this.Controls.Add(this.themlophoc);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "QLLthem";
             this.Text = "QLLthem";
+            this.Load += new System.EventHandler(this.QLLthem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,14 +143,12 @@ namespace _3S_project.GUI.FormQuanLyLop
 
         #endregion
 
+        private System.Windows.Forms.ComboBox cbxKhoa;
         private System.Windows.Forms.Button dongy;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label tenkhoa;
         private System.Windows.Forms.Label khoahoc;
-        private System.Windows.Forms.Label malop;
         private System.Windows.Forms.Label tenlop;
         private System.Windows.Forms.Label themlophoc;
     }

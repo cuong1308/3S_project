@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _3S_project.GUI.FormAdmin
+namespace _3S_project.GUI.FormAdmin.FormQuanLyTaiKhoan
 {
-    public partial class FormQuanLyLop : Form
+    public partial class PhanQuyen : Form
     {
-        public FormQuanLyLop()
+        public PhanQuyen()
         {
             InitializeComponent();
         }

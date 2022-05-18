@@ -56,6 +56,8 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
             // 
             // dataGridView6
             // 
+            this.dataGridView6.AllowUserToAddRows = false;
+            this.dataGridView6.AllowUserToDeleteRows = false;
             this.dataGridView6.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView6.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;

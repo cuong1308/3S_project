@@ -1,7 +1,7 @@
 ﻿
 namespace _3S_project.GUI.FormQuanLyLopHP
 {
-    partial class hpXoasv
+    partial class frmXoaSvHP
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,6 @@ namespace _3S_project.GUI.FormQuanLyLopHP
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.qlsv = new System.Windows.Forms.Label();
             this.masinhvien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,6 +37,8 @@ namespace _3S_project.GUI.FormQuanLyLopHP
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qlsv = new System.Windows.Forms.Label();
+            this.btnXoa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,22 +53,13 @@ namespace _3S_project.GUI.FormQuanLyLopHP
             this.Column4,
             this.Column5,
             this.Column6});
-            this.dataGridView1.Location = new System.Drawing.Point(43, 180);
+            this.dataGridView1.Location = new System.Drawing.Point(29, 117);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(714, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(476, 97);
             this.dataGridView1.TabIndex = 63;
-            // 
-            // qlsv
-            // 
-            this.qlsv.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qlsv.Location = new System.Drawing.Point(201, 120);
-            this.qlsv.Name = "qlsv";
-            this.qlsv.Size = new System.Drawing.Size(404, 41);
-            this.qlsv.TabIndex = 62;
-            this.qlsv.Text = "Xóa Sinh Viên";
-            this.qlsv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // masinhvien
             // 
@@ -118,14 +110,36 @@ namespace _3S_project.GUI.FormQuanLyLopHP
             this.Column6.Name = "Column6";
             this.Column6.Width = 150;
             // 
-            // hpXoasv
+            // qlsv
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.qlsv.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qlsv.Location = new System.Drawing.Point(134, 78);
+            this.qlsv.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.qlsv.Name = "qlsv";
+            this.qlsv.Size = new System.Drawing.Size(269, 27);
+            this.qlsv.TabIndex = 62;
+            this.qlsv.Text = "Xóa Sinh Viên";
+            this.qlsv.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(396, 257);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.TabIndex = 64;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            // 
+            // frmXoaSvHP
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
+            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.qlsv);
-            this.Name = "hpXoasv";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "frmXoaSvHP";
             this.Text = "hpXoasv";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -143,5 +157,6 @@ namespace _3S_project.GUI.FormQuanLyLopHP
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Button btnXoa;
     }
 }
