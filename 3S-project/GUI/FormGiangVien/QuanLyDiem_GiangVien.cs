@@ -1,4 +1,5 @@
 ﻿using _3S_project.Data;
+using _3S_project.GUI.FormAdmin.FormDiem;
 using _3S_project.Model;
 using System;
 using System.Collections.Generic;
@@ -10,15 +11,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _3S_project.GUI.FormAdmin.FormDiem
+namespace _3S_project.GUI.FormGiangVien
 {
-    public partial class QuanLyDiem : Form
+    public partial class QuanLyDiem_GiangVien : Form
     {
-        public QuanLyDiem()
+        public QuanLyDiem_GiangVien(string maGiangVien)
         {
             InitializeComponent();
             dataLopHocPhan dataLopHocPhan = new dataLopHocPhan();
-            cbxLopHocPhan.DataSource = dataLopHocPhan.getlstLopHocPhan();
+            cbxLopHocPhan.DataSource = dataLopHocPhan.getlstLopHocPhan_GiangVien(maGiangVien);
             cbxLopHocPhan.DisplayMember = "TenLopHocPhan";
             cbxLopHocPhan.SelectedIndex = 0;
             LoadQLD();
@@ -29,7 +30,7 @@ namespace _3S_project.GUI.FormAdmin.FormDiem
             int maLopHocPhan = 0;
             LopHocPhan lhp = (LopHocPhan)cbxLopHocPhan.SelectedItem;
             maLopHocPhan = lhp.MaLopHocPhan;
-            bsQuanLyDiem.DataSource = dataDiem.getlstDiem("",maLopHocPhan,"");
+            bsQuanLyDiem.DataSource = dataDiem.getlstDiem("", maLopHocPhan, "");
             gridQuanLyBanDiem.AutoGenerateColumns = false;
             gridQuanLyBanDiem.DataSource = bsQuanLyDiem;
         }
@@ -38,7 +39,7 @@ namespace _3S_project.GUI.FormAdmin.FormDiem
 
         private void gridQuanLyBanDiem_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             if (gridQuanLyBanDiem.Columns[e.ColumnIndex].Name == "nhap")
             {
                 DataGridViewRow selectedRow = gridQuanLyBanDiem.Rows[e.RowIndex];
@@ -60,36 +61,6 @@ namespace _3S_project.GUI.FormAdmin.FormDiem
             bsQuanLyDiem.DataSource = dataDiem.getlstDiem(txtTenSinhVien.Text, maLopHocPhan, txtMaSinhVien.Text);
             gridQuanLyBanDiem.AutoGenerateColumns = false;
             gridQuanLyBanDiem.DataSource = bsQuanLyDiem;
-        }
-
-        private void QuanLyDiem_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button20_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

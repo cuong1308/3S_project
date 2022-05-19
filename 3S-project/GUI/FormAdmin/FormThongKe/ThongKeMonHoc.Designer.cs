@@ -32,12 +32,6 @@
             this.cbxMonHoc = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.gridTK = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.cbxTieuChi = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.bsMonHoc = new System.Windows.Forms.BindingSource(this.components);
             this.maSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +39,12 @@
             this.diemThanhPhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diemThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diemTongKet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cbxTieuChi = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bsMonHoc = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridTK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMonHoc)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +85,48 @@
             this.gridTK.Name = "gridTK";
             this.gridTK.Size = new System.Drawing.Size(544, 184);
             this.gridTK.TabIndex = 19;
+            // 
+            // maSinhVien
+            // 
+            this.maSinhVien.DataPropertyName = "MaSinhVien";
+            this.maSinhVien.HeaderText = "Mã sinh viên";
+            this.maSinhVien.Name = "maSinhVien";
+            // 
+            // tenSinhVien
+            // 
+            this.tenSinhVien.DataPropertyName = "TenSinhVien";
+            this.tenSinhVien.HeaderText = "Tên sinh viên";
+            this.tenSinhVien.Name = "tenSinhVien";
+            // 
+            // tenLop
+            // 
+            this.tenLop.DataPropertyName = "TenLop";
+            this.tenLop.HeaderText = "Lớp";
+            this.tenLop.Name = "tenLop";
+            // 
+            // tenLopHocPhan
+            // 
+            this.tenLopHocPhan.DataPropertyName = "TenLopHocPhan";
+            this.tenLopHocPhan.HeaderText = "Lớp học phần";
+            this.tenLopHocPhan.Name = "tenLopHocPhan";
+            // 
+            // diemThanhPhan
+            // 
+            this.diemThanhPhan.DataPropertyName = "DiemThanhPhan";
+            this.diemThanhPhan.HeaderText = "Điểm thành phần";
+            this.diemThanhPhan.Name = "diemThanhPhan";
+            // 
+            // diemThi
+            // 
+            this.diemThi.DataPropertyName = "DiemThi";
+            this.diemThi.HeaderText = "Điểm thi";
+            this.diemThi.Name = "diemThi";
+            // 
+            // diemTongKet
+            // 
+            this.diemTongKet.DataPropertyName = "DiemTongKet";
+            this.diemTongKet.HeaderText = "Điểm tổng kết";
+            this.diemTongKet.Name = "diemTongKet";
             // 
             // button2
             // 
@@ -132,48 +174,6 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Thống kê theo môn học";
             // 
-            // maSinhVien
-            // 
-            this.maSinhVien.DataPropertyName = "MaSinhVien";
-            this.maSinhVien.HeaderText = "Mã sinh viên";
-            this.maSinhVien.Name = "maSinhVien";
-            // 
-            // tenSinhVien
-            // 
-            this.tenSinhVien.DataPropertyName = "TenSinhVien";
-            this.tenSinhVien.HeaderText = "Tên sinh viên";
-            this.tenSinhVien.Name = "tenSinhVien";
-            // 
-            // tenLop
-            // 
-            this.tenLop.DataPropertyName = "TenLop";
-            this.tenLop.HeaderText = "Lớp";
-            this.tenLop.Name = "tenLop";
-            // 
-            // tenLopHocPhan
-            // 
-            this.tenLopHocPhan.DataPropertyName = "TenLopHocPhan";
-            this.tenLopHocPhan.HeaderText = "Lớp học phần";
-            this.tenLopHocPhan.Name = "tenLopHocPhan";
-            // 
-            // diemThanhPhan
-            // 
-            this.diemThanhPhan.DataPropertyName = "DiemThanhPhan";
-            this.diemThanhPhan.HeaderText = "Điểm thành phần";
-            this.diemThanhPhan.Name = "diemThanhPhan";
-            // 
-            // diemThi
-            // 
-            this.diemThi.DataPropertyName = "DiemThi";
-            this.diemThi.HeaderText = "Điểm thi";
-            this.diemThi.Name = "diemThi";
-            // 
-            // diemTongKet
-            // 
-            this.diemTongKet.DataPropertyName = "DiemTongKet";
-            this.diemTongKet.HeaderText = "Điểm tổng kết";
-            this.diemTongKet.Name = "diemTongKet";
-            // 
             // ThongKeMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -189,6 +189,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ThongKeMonHoc";
             this.Text = "ThongKeMonHoc";
+            this.Load += new System.EventHandler(this.ThongKeMonHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridTK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMonHoc)).EndInit();
             this.ResumeLayout(false);

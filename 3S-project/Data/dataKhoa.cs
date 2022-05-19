@@ -91,15 +91,35 @@ namespace _3S_project.Data
         public bool Them(string tenKhoa)
         {
             bool result = false;
+            bool check = false;
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
                 command.Connection = cnn;
-                string sql = "Insert into Khoa(TenKhoa,TrangThai) Values (@TenKhoa,1)";
+                string sql = "select* from Khoa where TenKhoa = @TenKhoa and TrangThai = 1";
                 command.CommandText = sql;
                 command.Parameters.AddWithValue("@TenKhoa", tenKhoa);
-                result = command.ExecuteNonQuery() > 0;
+
+                var reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    check = true;
+                }
+
                 cnn.Close();
+            }
+            if (check is false)
+            {
+                using (SqlConnection cnn = DbUtils.GetConnection())
+                {
+                    var command = new SqlCommand();
+                    command.Connection = cnn;
+                    string sql = "Insert into Khoa(TenKhoa,TrangThai) Values (@TenKhoa,1)";
+                    command.CommandText = sql;
+                    command.Parameters.AddWithValue("@TenKhoa", tenKhoa);
+                    result = command.ExecuteNonQuery() > 0;
+                    cnn.Close();
+                }
             }
             return result;
         }

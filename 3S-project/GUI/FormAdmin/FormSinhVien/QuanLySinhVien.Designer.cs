@@ -197,6 +197,7 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             this.Controls.Add(this.label9);
             this.Name = "frmQuanLySinhVien";
             this.Text = "QuanLySinhVien";
+            this.Load += new System.EventHandler(this.frmQuanLySinhVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsQuanLySinhVien)).EndInit();
             this.ResumeLayout(false);

@@ -157,6 +157,7 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
             this.Controls.Add(this.label13);
             this.Name = "frmQuanLyMonHoc";
             this.Text = "Quản lý môn học";
+            this.Load += new System.EventHandler(this.frmQuanLyMonHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingQuanLyMonHoc)).EndInit();
             this.ResumeLayout(false);

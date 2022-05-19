@@ -100,17 +100,38 @@ namespace _3S_project.Data
         public bool Them(string tenLop, string khoaHoc, int maKhoa)
         {
             bool result = false;
+
+            bool check = false;
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 var command = new SqlCommand();
                 command.Connection = cnn;
-                string sql = "Insert into Lop(TenLop, KhoaHoc, MaKhoa,TrangThai) Values (@TenLop, @KhoaHoc, @MaKhoa,1)";
+                string sql = "select* from Lop where TenLop = @TenLop and TrangThai = 1";
                 command.CommandText = sql;
                 command.Parameters.AddWithValue("@TenLop", tenLop);
-                command.Parameters.AddWithValue("@KhoaHoc", khoaHoc);
-                command.Parameters.AddWithValue("@MaKhoa", maKhoa);
-                result = command.ExecuteNonQuery() > 0;
+
+                var reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    check = true;
+                }
+
                 cnn.Close();
+            }
+            if (check is false)
+            {
+                using (SqlConnection cnn = DbUtils.GetConnection())
+                {
+                    var command = new SqlCommand();
+                    command.Connection = cnn;
+                    string sql = "Insert into Lop(TenLop, KhoaHoc, MaKhoa,TrangThai) Values (@TenLop, @KhoaHoc, @MaKhoa,1)";
+                    command.CommandText = sql;
+                    command.Parameters.AddWithValue("@TenLop", tenLop);
+                    command.Parameters.AddWithValue("@KhoaHoc", khoaHoc);
+                    command.Parameters.AddWithValue("@MaKhoa", maKhoa);
+                    result = command.ExecuteNonQuery() > 0;
+                    cnn.Close();
+                }
             }
             return result;
         }

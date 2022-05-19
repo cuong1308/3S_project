@@ -61,20 +61,23 @@
             // đổiMậtKhẩuToolStripMenuItem
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
+            this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // quảnLýToolStripMenuItem
             // 
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
             this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
             this.quảnLýToolStripMenuItem.Text = "Quản lý bảng điểm";
+            this.quảnLýToolStripMenuItem.Click += new System.EventHandler(this.quảnLýToolStripMenuItem_Click);
             // 
             // label2
             // 

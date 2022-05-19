@@ -54,5 +54,10 @@ namespace _3S_project.GUI.FormAdmin.FormThongKe
                 bsMonHoc.DataSource = dataDiem.tkMonHoc("8.5", "10", maMonHoc);
             gridTK.DataSource = bsMonHoc;
         }
+
+        private void ThongKeMonHoc_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

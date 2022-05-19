@@ -41,6 +41,39 @@ namespace _3S_project.Data
 
             }
         }
+
+        public List<LopHocPhan> getlstLopHocPhan_GiangVien(string maGiangVien)
+        {
+            using (SqlConnection cnn = DbUtils.GetConnection())
+            {
+                var command = new SqlCommand();
+                command.Connection = cnn;
+                string sql = "SELECT MaLopHocPhan, TenLopHocPhan,HocKi, NamHoc, MaMonHoc, MaGiangVien FROM LopHocPhan where TrangThai = 1 and MaGiangVien = @MaGiangVien";
+                command.CommandText = sql;
+                command.Parameters.AddWithValue("@MaGiangVien", maGiangVien);
+                var reader = command.ExecuteReader();
+
+                List<LopHocPhan> lst = new List<LopHocPhan>();
+                while (reader.Read())
+                {
+                    LopHocPhan temp = new LopHocPhan();
+                    temp.MaLopHocPhan = reader.GetInt32(0);
+                    temp.TenLopHocPhan = reader.GetString(1);
+                    temp.HocKi = reader.GetInt32(2);
+                    temp.NamHoc = reader.GetString(3);
+                    dataMonHoc dataMonHoc = new dataMonHoc();
+                    dataGiangVien dataGiangVien = new dataGiangVien();
+                    temp.MonHoc = dataMonHoc.getMonHoc(reader.GetInt32(4));
+                    temp.GiangVien = dataGiangVien.getGiangVien(reader.GetInt32(5));
+                    lst.Add(temp);
+                }
+                cnn.Close();
+                return lst;
+
+
+
+            }
+        }
         public List<LopHocPhan> getlstLopHocPhan(string tenLopHocPhan)
         {
             using (SqlConnection cnn = DbUtils.GetConnection())

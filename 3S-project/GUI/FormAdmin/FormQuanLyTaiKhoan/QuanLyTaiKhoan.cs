@@ -37,6 +37,27 @@ namespace _3S_project.GUI.FormAdmin.FormQuanLyTaiKhoan
                     e.FormattingApplied = true;
                 }
             }
+            if(e.ColumnIndex == 2)
+            {
+                if (e.Value is int)
+                {
+                    int value = (int)e.Value;
+                    if(value == 1)
+                    {
+                        e.Value = "Admin";
+                    }
+                    else if(value == 2)
+                    {
+                        e.Value = "Quản lý";
+                    }else if(value == 3)
+                    {
+                        e.Value = "Giảng viên";
+                    }
+
+                    
+                    e.FormattingApplied = true;
+                }
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -73,6 +94,9 @@ namespace _3S_project.GUI.FormAdmin.FormQuanLyTaiKhoan
             {
                 DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
                 Model.TaiKhoan tk = (Model.TaiKhoan)selectedRow.DataBoundItem;
+                PhanQuyen phanQuyen = new PhanQuyen(tk);
+                phanQuyen.ShowDialog();
+                LoadTk();
             }
         }
 

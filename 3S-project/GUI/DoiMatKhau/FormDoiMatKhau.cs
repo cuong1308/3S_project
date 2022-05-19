@@ -7,16 +7,18 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace _3S_project.GUI.FormAdmin.TaiKhoan
 {
     public partial class FormDoiMatKhau : Form
     {
-        public FormDoiMatKhau()
+        string tenTk;
+        public FormDoiMatKhau(string tentk)
         {
             InitializeComponent();
-            
+            tenTk = tentk;
         }
     
 
@@ -27,55 +29,80 @@ namespace _3S_project.GUI.FormAdmin.TaiKhoan
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
-            string ttk = txtTenTaiKhoan.Text;
-            string mkc = txtMatKhauCu.Text;
-            string mkm = txtMatKhauMoi.Text;
-            string nlmk = txtNhapLaiMatKhau.Text;
-            if (string.IsNullOrWhiteSpace(ttk))
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(mkc))
-            {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(mkm))
+                string mkc = txtMatKhauCu.Text;
+                string mkm = txtMatKhauMoi.Text;
+                string nlmk = txtNhapLaiMatKhau.Text;
+                isvalid_DoiMatKhau(mkm);
+                if (string.IsNullOrWhiteSpace(tenTk))
                 {
                     MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-            if (string.IsNullOrWhiteSpace(nlmk))
-            {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                else if (string.IsNullOrWhiteSpace(mkc))
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if (string.IsNullOrWhiteSpace(mkm))
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if (string.IsNullOrWhiteSpace(nlmk))
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if (string.Compare(mkc, mkm) == 0)
+                {
+                    MessageBox.Show("Mật khẩu cũ và mật khẩu mới trùng nhau!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (string.Compare(mkm, nlmk) != 0)
+                {
+                    MessageBox.Show("Mật khẩu mới không khớp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+
+                else if (isvalid_DoiMatKhau(mkm) == true)
+                {
+                    var dataTK = new Data.TaiKhoan();
+                    Model.TaiKhoan tk = dataTK.kiemTraDangNhap(tenTk, mkc);
+                    if (tk == null)
+                    {
+                        MessageBox.Show("Mật khẩu cũ không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        var dtTK = new Data.TaiKhoan();
+                        dtTK.DoiMatKhau(txtTenTaiKhoan.Text, txtMatKhauMoi.Text);
+                        MessageBox.Show("Đổi mật khẩu thành công!");
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Tối thiểu tám ký tự, ít nhất một chữ cái, một số và một ký tự đặc biệt", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            if(string.Compare(mkc, mkm) == 0)
+
+        }
+        public bool isvalid_DoiMatKhau(string txt)
+        {
+            Regex check = new Regex(@"^(?=.[A-Za-z])(?=.\d)[A-Za-z\d]{8,}$");
+            bool value = false;
+            value = check.IsMatch(txt);
+            if (value == true)
             {
-                MessageBox.Show("Mật khẩu cũ và mật khẩu mới trùng nhau!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if(string.Compare(mkm, nlmk) != 0 )
-            {
-                MessageBox.Show("Mật khẩu mới không khớp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                
-            }
-            var dataTK = new Data.TaiKhoan();
-            Model.TaiKhoan tk = dataTK.kiemTraDangNhap(ttk, mkc);            
-            if(tk == null)
-            {
-                MessageBox.Show("Tên tài khoản hoặc mật khẩu sai", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return value;
             }
             else
             {
-                var dtTK = new Data.TaiKhoan();
-                dtTK.DoiMatKhau(txtTenTaiKhoan.Text, txtMatKhauMoi.Text);
-                MessageBox.Show("Đổi mật khẩu thành công!");
-                this.Close();
+
+                return true;
+                //return value;
             }
         }
-      
-
         private void label4_Click(object sender, EventArgs e)
         {
             

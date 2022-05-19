@@ -96,5 +96,10 @@ namespace _3S_project.GUI.FormAdmin.QuanLyGiangVien
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = bsGiangVien;
         }
+
+        private void FormGV_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

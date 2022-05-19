@@ -84,3 +84,5 @@ C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.Form
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormQuanLyTaiKhoan.QuanLyTaiKhoan.resources
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormQuanLyTaiKhoan.ThemTaiKhoan.resources
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormQuanLyTaiKhoan.SuaTaiKhoan.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormQuanLyTaiKhoan.PhanQuyen.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormGiangVien.QuanLyDiem_GiangVien.resources

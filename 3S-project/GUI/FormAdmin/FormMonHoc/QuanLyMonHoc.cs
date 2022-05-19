@@ -127,5 +127,10 @@ namespace _3S_project.GUI.FormAdmin.FormMonHoc
             dataGridView6.AutoGenerateColumns = false;
             dataGridView6.DataSource = bindingQuanLyMonHoc;
         }
+
+        private void frmQuanLyMonHoc_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

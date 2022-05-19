@@ -11,13 +11,11 @@ namespace _3S_project.Data
 {
     internal class dataDiem
     {
-        public List<Diem> getlstDiem(string tenSinhVien,string tenLopHocPhan,string tenMonHoc,string maSinhVien)
+        public List<Diem> getlstDiem(string tenSinhVien,int maLopHocPhan,string maSinhVien)
         {
             using (SqlConnection cnn = DbUtils.GetConnection())
             {
                 string tenSinhVien_like = "%" + tenSinhVien + "%";
-                string tenLopHocPhan_like = "%" + tenLopHocPhan + "%";
-                string tenLop_like = "%" + tenMonHoc + "%";
                 string maSinhVien_like = "%" + maSinhVien + "%";
 
                 var command = new SqlCommand();
@@ -27,11 +25,10 @@ namespace _3S_project.Data
                                     join SinhVien as sv on d.MaSinhVien = sv.MaSinhVien
                                     join LopHocPhan as lhp on d.MaLopHocPhan = lhp.MaLopHocPhan
                                     join MonHoc as mh on mh.MaMonHoc = lhp.MaMonHoc
-                                where d.TrangThai = 1 and sv.TrangThai = 1 and lhp.TrangThai = 1 and TenLopHocPhan like @TenLopHocPhan and TenSinhVien like @TenSinhVien and mh.TenMonHoc like @TenLop and sv.MaSinhVien like @MaSinhVien";
+                                where d.TrangThai = 1 and sv.TrangThai = 1 and lhp.TrangThai = 1 and lhp.MaLopHocPhan = @MaLopHocPhan and TenSinhVien like @TenSinhVien and sv.MaSinhVien like @MaSinhVien";
                 command.CommandText = sql;
                 command.Parameters.AddWithValue("@MaSinhVien", maSinhVien_like);
-                command.Parameters.AddWithValue("@TenLopHocPhan", tenLopHocPhan_like);
-                command.Parameters.AddWithValue("@TenLop", tenLop_like);
+                command.Parameters.AddWithValue("@MaLopHocPhan", maLopHocPhan);;
                 command.Parameters.AddWithValue("@TenSinhVien", tenSinhVien_like);
 
                 var reader = command.ExecuteReader();
@@ -180,7 +177,7 @@ namespace _3S_project.Data
             string Sql = @"     Select sv.MaSinhVien,sv.TenSinhVien, Round((d.DiemChuyenCan*0.25 + d.DiemKiemTra1*0.25 + d.DiemKiemTra2*0.25 + d.DiemKiemTra3*0.25),2) as DiemThanhPhan,d.DiemThi,Round((d.DiemChuyenCan*0.1 + d.DiemKiemTra1*0.1 + d.DiemKiemTra2*0.1 + d.DiemKiemTra3*0.1 + d.DiemThi*0.6),2) as DiemTongKet
                                 from Diem as d
 	                                join SinhVien as sv on sv.MaSinhVien = d.MaSinhVien
-                                where d.MaLopHocPhan = " + maLopHocPhan 
+                                where sv.TrangThai = 1 and d.MaLopHocPhan = " + maLopHocPhan 
                                 + @"and (d.DiemChuyenCan*0.1 + d.DiemKiemTra1*0.1 + d.DiemKiemTra2*0.1 + d.DiemKiemTra3*0.1 + d.DiemThi*0.6) > " + x + 
                                 @" and (d.DiemChuyenCan*0.1 + d.DiemKiemTra1*0.1 + d.DiemKiemTra2*0.1 + d.DiemKiemTra3*0.1 + d.DiemThi*0.6) < " + y;
             SqlDataAdapter ds = new SqlDataAdapter(Sql, cnn);
@@ -198,7 +195,7 @@ namespace _3S_project.Data
 	                                join SinhVien as sv on sv.MaSinhVien = d.MaSinhVien
 									join Lop as l on sv.MaLop = l.MaLop	
 									join LopHocPhan as lhp on d.MaLopHocPhan = lhp.MaLopHocPhan
-                                where lhp.MaMonHoc = " + monHoc + @"
+                                where sv.TrangThai = 1 and lhp.MaMonHoc = " + monHoc + @"
                                 and (d.DiemChuyenCan*0.1 + d.DiemKiemTra1*0.1 + d.DiemKiemTra2*0.1 + d.DiemKiemTra3*0.1 + d.DiemThi*0.6) >" + x + @"
                                 and (d.DiemChuyenCan*0.1 + d.DiemKiemTra1*0.1 + d.DiemKiemTra2*0.1 + d.DiemKiemTra3*0.1 + d.DiemThi*0.6) < " + y;
             SqlDataAdapter ds = new SqlDataAdapter(Sql, cnn);

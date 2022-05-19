@@ -74,6 +74,7 @@ namespace _3S_project.GUI.FormAdmin.TaiKhoan
             this.txtMatKhauCu.Name = "txtMatKhauCu";
             this.txtMatKhauCu.Size = new System.Drawing.Size(145, 20);
             this.txtMatKhauCu.TabIndex = 3;
+            this.txtMatKhauCu.UseSystemPasswordChar = true;
             // 
             // txtMatKhauMoi
             // 
@@ -81,7 +82,6 @@ namespace _3S_project.GUI.FormAdmin.TaiKhoan
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
             this.txtMatKhauMoi.Size = new System.Drawing.Size(145, 20);
             this.txtMatKhauMoi.TabIndex = 4;
-            this.txtMatKhauMoi.UseSystemPasswordChar = true;
             // 
             // txtNhapLaiMatKhau
             // 
@@ -89,7 +89,6 @@ namespace _3S_project.GUI.FormAdmin.TaiKhoan
             this.txtNhapLaiMatKhau.Name = "txtNhapLaiMatKhau";
             this.txtNhapLaiMatKhau.Size = new System.Drawing.Size(145, 20);
             this.txtNhapLaiMatKhau.TabIndex = 5;
-            this.txtNhapLaiMatKhau.UseSystemPasswordChar = true;
             // 
             // label5
             // 

@@ -85,5 +85,10 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
                 LoadSV();
             }
         }
+
+        private void frmQuanLySinhVien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

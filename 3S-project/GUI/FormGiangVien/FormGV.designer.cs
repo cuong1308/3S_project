@@ -125,7 +125,7 @@ namespace _3S_project.GUI.FormAdmin.QuanLyGiangVien
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 25);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Quàn lý giảng viên";
+            this.label1.Text = "Quản lý giảng viên";
             // 
             // FormGV
             // 
@@ -139,6 +139,7 @@ namespace _3S_project.GUI.FormAdmin.QuanLyGiangVien
             this.Controls.Add(this.btnTimKiem);
             this.Name = "FormGV";
             this.Text = "Quản Lý Giảng Viên";
+            this.Load += new System.EventHandler(this.FormGV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsGiangVien)).EndInit();
             this.ResumeLayout(false);
