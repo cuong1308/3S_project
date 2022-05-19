@@ -121,29 +121,17 @@
     <Compile Include="GUI\FormAdmin\FormQuanLyKhoa\FormQuanLyKhoa.Designer.cs">
       <DependentUpon>FormQuanLyKhoa.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\FormAdmin\FormQuanLyLopHP\hpsuasv.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\FormAdmin\FormQuanLyLopHP\hpsuasv.Designer.cs">
-      <DependentUpon>hpsuasv.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\FormAdmin\FormQuanLyLopHP\hpthemsv.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\FormAdmin\FormQuanLyLopHP\hpthemsv.Designer.cs">
-      <DependentUpon>hpthemsv.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\FormAdmin\FormQuanLyLopHP\hpXoasv.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\FormAdmin\FormQuanLyLopHP\hpXoasv.Designer.cs">
-      <DependentUpon>hpXoasv.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\FormAdmin\FormQuanLyLopHP\QLLHPthem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\FormAdmin\FormQuanLyLopHP\QLLHPthem.Designer.cs">
       <DependentUpon>QLLHPthem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyLopHP\QLLHP_addSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormAdmin\FormQuanLyLopHP\QLLHP_addSV.Designer.cs">
+      <DependentUpon>QLLHP_addSV.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormAdmin\FormQuanLyLopHP\QLLHP_QLSV.cs">
       <SubType>Form</SubType>
@@ -422,17 +410,11 @@
     <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyKhoa\FormQuanLyKhoa.resx">
       <DependentUpon>FormQuanLyKhoa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLopHP\hpsuasv.resx">
-      <DependentUpon>hpsuasv.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLopHP\hpthemsv.resx">
-      <DependentUpon>hpthemsv.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLopHP\hpXoasv.resx">
-      <DependentUpon>hpXoasv.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLopHP\QLLHPthem.resx">
       <DependentUpon>QLLHPthem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLopHP\QLLHP_addSV.resx">
+      <DependentUpon>QLLHP_addSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormAdmin\FormQuanLyLopHP\QLLHP_QLSV.resx">
       <DependentUpon>QLLHP_QLSV.cs</DependentUpon>

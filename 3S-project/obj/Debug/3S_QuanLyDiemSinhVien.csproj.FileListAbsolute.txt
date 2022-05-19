@@ -50,8 +50,6 @@ C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.Form
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormQuanLyKhoa.FormKhoaSua.resources
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormQuanLyKhoa.FormQuanLyKhoa.resources
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormMonHoc.frmSuaMonHoc.resources
-C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormQuanLyLopHP.hpsuasv.resources
-C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormQuanLyLopHP.hpthemsv.resources
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormQuanLyLop.QLLHPthem.resources
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormQuanLyLop.QLLHP_QLSV.resources
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormQuanLyLop.QuanLyLopHocPhan.resources
@@ -77,7 +75,6 @@ C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.Form
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormQuanLyLop.QLL_QLSVthem.resources
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormQuanLyLop.QLL_QLSVxoa.resources
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormQuanLyLop.QLL_xoa.resources
-C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormQuanLyLopHP.frmXoaSvHP.resources
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormQuanLyLop.frmSuaLHP.resources
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormQuanLyLopHP.frmXoaLHP.resources
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormThongKe.ThongKeMonHoc.resources
@@ -86,3 +83,4 @@ C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.Form
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormQuanLyTaiKhoan.SuaTaiKhoan.resources
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormQuanLyTaiKhoan.PhanQuyen.resources
 C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormGiangVien.QuanLyDiem_GiangVien.resources
+C:\Users\kietv\source\repos\3S_project\3S-project\obj\Debug\_3S_project.GUI.FormAdmin.FormQuanLyLopHP.QLLHP_addSV.resources

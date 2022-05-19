@@ -85,6 +85,7 @@ namespace _3S_project.GUI.FormMain
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormDoiMatKhau frmDMK = new FormDoiMatKhau(tentk);
+            frmDMK.temp = TenTKK.Text;
             frmDMK.ShowDialog();
         }
 

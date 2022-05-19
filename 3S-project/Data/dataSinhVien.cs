@@ -41,6 +41,85 @@ namespace _3S_project.Data
             }
         }
 
+        public List<SinhVien> getlstSinhVien_LopHocPhan(string maLopHocPhan ,string maSinhVien,string tenSinhVien)
+        {
+            using (SqlConnection cnn = DbUtils.GetConnection())
+            {
+                string maSinhVien_like = "%" + maSinhVien + "%";
+                string tenSinhVien_like = "%" + tenSinhVien + "%";
+                var command = new SqlCommand();
+                command.Connection = cnn;
+                string sql = @"SELECT d.MaSinhVien, TenSinhVien, GioiTinh, NgaySinh,DiaChi, sv.MaLop 
+                               FROM SinhVien as sv
+                                   join Diem as d on d.MaSinhVien = sv.MaSinhVien
+                               where sv.TrangThai = 1 and d.TrangThai = 1 and d.MaLopHocPhan = @MaLopHocPhan and sv.TenSinhVien like @TenSinhVien and sv.MaSinhVien like @MaSinhVien";
+                command.CommandText = sql;
+                command.Parameters.AddWithValue("@MaLopHocPhan", maLopHocPhan);
+                command.Parameters.AddWithValue("@MaSinhVien", maSinhVien_like);
+                command.Parameters.AddWithValue("@TenSinhVien", tenSinhVien_like);
+                var reader = command.ExecuteReader();
+
+                List<SinhVien> lst = new List<SinhVien>();
+                while (reader.Read())
+                {
+                    SinhVien temp = new SinhVien();
+                    temp.MaSinhVien = reader.GetInt32(0);
+                    temp.TenSinhVien = reader.GetString(1);
+                    temp.GioiTinh = reader.GetBoolean(2);
+                    temp.DateTime = reader.GetDateTime(3);
+                    temp.DiaChi = reader.GetString(4);
+                    dataLop dataLop = new dataLop();
+                    temp.Lop = dataLop.getLop(reader.GetInt32(5));
+                    lst.Add(temp);
+                }
+                cnn.Close();
+                return lst;
+
+
+
+            }
+        }
+
+
+        public List<SinhVien> getlstSinhVien_expLopHocPhan(string maLopHocPhan, string maSinhVien, string tenSinhVien)
+        {
+            using (SqlConnection cnn = DbUtils.GetConnection())
+            {
+                string maSinhVien_like = "%" + maSinhVien + "%";
+                string tenSinhVien_like = "%" + tenSinhVien + "%";
+                var command = new SqlCommand();
+                command.Connection = cnn;
+                string sql = @"SELECT d.MaSinhVien, TenSinhVien, GioiTinh, NgaySinh,DiaChi, sv.MaLop 
+                               from SinhVien as sv
+	                                join Diem as d on d.MaSinhVien = sv.MaSinhVien
+                                where d.MaLopHocPhan != @MaLopHocPhan and sv.TrangThai = 1 and d.TrangThai = 1 and sv.TenSinhVien like @TenSinhVien and sv.MaSinhVien like @MaSinhVien";
+                command.CommandText = sql;
+                command.Parameters.AddWithValue("@MaLopHocPhan", maLopHocPhan);
+                command.Parameters.AddWithValue("@MaSinhVien", maSinhVien_like);
+                command.Parameters.AddWithValue("@TenSinhVien", tenSinhVien_like);
+                var reader = command.ExecuteReader();
+
+                List<SinhVien> lst = new List<SinhVien>();
+                while (reader.Read())
+                {
+                    SinhVien temp = new SinhVien();
+                    temp.MaSinhVien = reader.GetInt32(0);
+                    temp.TenSinhVien = reader.GetString(1);
+                    temp.GioiTinh = reader.GetBoolean(2);
+                    temp.DateTime = reader.GetDateTime(3);
+                    temp.DiaChi = reader.GetString(4);
+                    dataLop dataLop = new dataLop();
+                    temp.Lop = dataLop.getLop(reader.GetInt32(5));
+                    lst.Add(temp);
+                }
+                cnn.Close();
+                return lst;
+
+
+
+            }
+        }
+
 
         public List<SinhVien> getlstSinhVien(string tenSinhVien)
         {

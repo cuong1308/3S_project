@@ -7,7 +7,6 @@ using _3S_project.GUI.FormAdmin.FormThongKe;
 using _3S_project.GUI.FormAdmin.QuanLyGiangVien;
 using _3S_project.GUI.FormAdmin.TaiKhoan;
 using _3S_project.GUI.FormQuanLyLop;
-using _3S_project.GUI.FormQuanLyLopHP;
 using _3S_project.Model;
 using System;
 using System.Collections.Generic;
@@ -41,7 +40,7 @@ namespace _3S_project.GUI.FormMain
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormDoiMatKhau formDoiMatKhau = new FormDoiMatKhau(tenTaiKhoan);
-            formDoiMatKhau.temp = tenTaiKhoan;
+            formDoiMatKhau.temp = labTenTk.Text;
             formDoiMatKhau.ShowDialog();
 
         }
@@ -113,6 +112,11 @@ namespace _3S_project.GUI.FormMain
         }
 
         private void quảnLýLớpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormMainAdmin_Load(object sender, EventArgs e)
         {
 
         }

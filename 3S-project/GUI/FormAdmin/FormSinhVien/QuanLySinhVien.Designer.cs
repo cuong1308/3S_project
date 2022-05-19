@@ -32,20 +32,20 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             this.components = new System.ComponentModel.Container();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.maSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenSinhVIen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenLop1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.bsQuanLySinhVien = new System.Windows.Forms.BindingSource(this.components);
+            this.Xoa = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Sua = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tenLop1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenSinhVIen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsQuanLySinhVien)).BeginInit();
             this.SuspendLayout();
@@ -80,61 +80,6 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             this.dataGridView4.TabIndex = 34;
             this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             this.dataGridView4.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView4_CellFormatting);
-            // 
-            // maSinhVien
-            // 
-            this.maSinhVien.DataPropertyName = "MaSinhVien";
-            this.maSinhVien.HeaderText = "Mã sinh viên";
-            this.maSinhVien.Name = "maSinhVien";
-            // 
-            // tenSinhVIen
-            // 
-            this.tenSinhVIen.DataPropertyName = "TenSinhVien";
-            this.tenSinhVIen.HeaderText = "Tên sinh viên";
-            this.tenSinhVIen.Name = "tenSinhVIen";
-            // 
-            // sinhVien
-            // 
-            this.sinhVien.DataPropertyName = "DateTime";
-            this.sinhVien.HeaderText = "Ngày sinh";
-            this.sinhVien.Name = "sinhVien";
-            // 
-            // gioiTinh
-            // 
-            this.gioiTinh.DataPropertyName = "GioiTinh";
-            this.gioiTinh.HeaderText = "Giới tính";
-            this.gioiTinh.Name = "gioiTinh";
-            // 
-            // diaChi
-            // 
-            this.diaChi.DataPropertyName = "DiaChi";
-            this.diaChi.HeaderText = "Địa chỉ";
-            this.diaChi.Name = "diaChi";
-            // 
-            // tenLop1
-            // 
-            this.tenLop1.DataPropertyName = "TenLop";
-            this.tenLop1.HeaderText = "Tên lớp";
-            this.tenLop1.Name = "tenLop1";
-            this.tenLop1.Width = 150;
-            // 
-            // Sua
-            // 
-            this.Sua.DataPropertyName = "Sua";
-            this.Sua.HeaderText = "Sửa";
-            this.Sua.Name = "Sua";
-            this.Sua.Text = "Sửa";
-            this.Sua.UseColumnTextForButtonValue = true;
-            this.Sua.Width = 75;
-            // 
-            // Xoa
-            // 
-            this.Xoa.DataPropertyName = "Xoa";
-            this.Xoa.HeaderText = "Xoá";
-            this.Xoa.Name = "Xoa";
-            this.Xoa.Text = "Xoá";
-            this.Xoa.UseColumnTextForButtonValue = true;
-            this.Xoa.Width = 75;
             // 
             // button12
             // 
@@ -182,6 +127,61 @@ namespace _3S_project.GUI.FormAdmin.FormSinhVien
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(0, 25);
             this.label9.TabIndex = 29;
+            // 
+            // Xoa
+            // 
+            this.Xoa.DataPropertyName = "Xoa";
+            this.Xoa.HeaderText = "Xoá";
+            this.Xoa.Name = "Xoa";
+            this.Xoa.Text = "Xoá";
+            this.Xoa.UseColumnTextForButtonValue = true;
+            this.Xoa.Width = 75;
+            // 
+            // Sua
+            // 
+            this.Sua.DataPropertyName = "Sua";
+            this.Sua.HeaderText = "Sửa";
+            this.Sua.Name = "Sua";
+            this.Sua.Text = "Sửa";
+            this.Sua.UseColumnTextForButtonValue = true;
+            this.Sua.Width = 75;
+            // 
+            // tenLop1
+            // 
+            this.tenLop1.DataPropertyName = "TenLop";
+            this.tenLop1.HeaderText = "Tên lớp";
+            this.tenLop1.Name = "tenLop1";
+            this.tenLop1.Width = 150;
+            // 
+            // diaChi
+            // 
+            this.diaChi.DataPropertyName = "DiaChi";
+            this.diaChi.HeaderText = "Địa chỉ";
+            this.diaChi.Name = "diaChi";
+            // 
+            // gioiTinh
+            // 
+            this.gioiTinh.DataPropertyName = "GioiTinh";
+            this.gioiTinh.HeaderText = "Giới tính";
+            this.gioiTinh.Name = "gioiTinh";
+            // 
+            // sinhVien
+            // 
+            this.sinhVien.DataPropertyName = "DateTime";
+            this.sinhVien.HeaderText = "Ngày sinh";
+            this.sinhVien.Name = "sinhVien";
+            // 
+            // tenSinhVIen
+            // 
+            this.tenSinhVIen.DataPropertyName = "TenSinhVien";
+            this.tenSinhVIen.HeaderText = "Tên sinh viên";
+            this.tenSinhVIen.Name = "tenSinhVIen";
+            // 
+            // maSinhVien
+            // 
+            this.maSinhVien.DataPropertyName = "MaSinhVien";
+            this.maSinhVien.HeaderText = "Mã sinh viên";
+            this.maSinhVien.Name = "maSinhVien";
             // 
             // frmQuanLySinhVien
             // 

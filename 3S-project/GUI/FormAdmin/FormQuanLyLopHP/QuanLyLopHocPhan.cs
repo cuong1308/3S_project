@@ -31,7 +31,9 @@ namespace _3S_project.GUI.FormQuanLyLop
 
         private void button14_Click(object sender, EventArgs e)
         {
-            QLLHP_QLSV frmQLLHP_QLSV = new QLLHP_QLSV();
+            DataGridViewRow selectedRow = dataGridView5.CurrentRow;
+            LopHocPhan lophp = (LopHocPhan)selectedRow.DataBoundItem;
+            QLLHP_QLSV frmQLLHP_QLSV = new QLLHP_QLSV(lophp);
             frmQLLHP_QLSV.ShowDialog();
         }
 

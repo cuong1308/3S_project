@@ -48,6 +48,7 @@
             this.theoLớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.labTenTk = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -217,17 +218,28 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Xìn chào, ??";
             // 
+            // labTenTk
+            // 
+            this.labTenTk.AutoSize = true;
+            this.labTenTk.Location = new System.Drawing.Point(746, 9);
+            this.labTenTk.Name = "labTenTk";
+            this.labTenTk.Size = new System.Drawing.Size(42, 13);
+            this.labTenTk.TabIndex = 3;
+            this.labTenTk.Text = "Tên Tk";
+            // 
             // FormMainAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labTenTk);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMainAdmin";
             this.Text = "Quản lý điểm sinh viên (Admin)";
+            this.Load += new System.EventHandler(this.FormMainAdmin_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -257,5 +269,6 @@
         private System.Windows.Forms.ToolStripMenuItem theoLớpToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labTenTk;
     }
 }
